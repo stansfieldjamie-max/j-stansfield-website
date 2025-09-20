@@ -1,0 +1,140 @@
+/*
+  Importing Cormorant Garamond for a luxurious, classic aesthetic.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+body {
+    /* Using a deep, rich black for the background that fills the entire viewport */
+    background-color: #050505;
+    color: #ADA694; /* Soft, readable gray for body text */
+    font-family: 'Cormorant Garamond', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Allows for absolute positioning of child elements */
+    overflow-y: hidden; /* This prevents vertical scrolling by default */
+}
+
+.logo-invisible {
+    /* Fine-tuning the size and spacing for a more intentional, high-end look */
+    font-size: 0.875rem; /* Increased size for better visibility */
+    letter-spacing: 0.3em; /* Reduced spacing to bring letters closer */
+    color: #ADA694; /* Starting color to match nav links */
+    font-weight: 300; /* Lighter font weight for elegance */
+    /* Adding a transition for a smooth hover effect */
+    transition: all 0.3s ease-in-out;
+    cursor: default; /* Change cursor to default to show it's not clickable */
+}
+
+/* The new hover effect: slightly brighter color and a tiny scale transform */
+.logo-invisible:hover {
+    color: #C8AA6E;
+}
+
+.shimmer-text {
+    color: transparent; /* Makes the text transparent so the background gradient shows through */
+    background: linear-gradient(90deg, #ADA694 0%, #C8AA6E 50%, #ADA694 100%);
+    background-size: 200% auto;
+    background-clip: text; /* Clips the gradient to the shape of the text */
+    -webkit-background-clip: text; /* For Safari support */
+    animation: shimmer 5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}
+
+.bee-logo-img {
+    /* Positioning the bee in the bottom right corner */
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    width: 4rem; /* Making it a subtle size */
+    height: auto;
+    opacity: 0.7; /* Keeping it slightly translucent for discretion */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.bee-logo-img:hover {
+    opacity: 1; /* More prominent on hover */
+    transform: scale(1.1);
+}
+
+/* Styling for the navigation links */
+.nav-link {
+    /* Basic link styling, inherits from the Cormorant Garamond font */
+    color: #ADA694;
+    font-weight: 500;
+    letter-spacing: 0.2em; /* Increased letter-spacing for elegance */
+    position: relative;
+    padding-bottom: 0.5em; /* Add space for the animated line */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Create the animated line on hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #C8AA6E;
+    transform: scaleX(0); /* Line is invisible by default */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animate the line to full width on hover */
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Styling for the "Discover Our Services" button */
+.cta-button {
+    /* New button styling for elegance */
+    border-color: #ADA694; /* Match the body text color */
+    color: #ADA694;
+    transition: all 0.3s ease-in-out;
+}
+.cta-button:hover {
+    background-color: transparent; /* Changed to transparent for a more elegant effect */
+    color: #C8AA6E; /* Text changes to gold */
+    border-color: #C8AA6E; /* Border changes to gold */
+}
+
+/* Styling for the new "Enquire" button in the navigation */
+.nav-button {
+    border: 1px solid #ADA694;
+    border-radius: 9999px; /* This makes the corners fully rounded */
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+.nav-button:hover {
+    background-color: transparent;
+    color: #C8AA6E;
+    border-color: #C8AA6E;
+}
+.service-card {
+    background-color: #111111;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+.service-card:hover {
+    box-shadow: 0 0 2rem rgba(200, 170, 110, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-card-img {
+    height: 120px; /* You can adjust this height */
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border-radius: 0.5rem; /* Gives the image slightly rounded corners */
+}
