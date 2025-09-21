@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - J. Stansfield & Sons</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Allow scrolling on this page */
+        body {
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation -->
+    <header class="p-6 md:p-8 flex justify-between items-center z-50">
+        <div class="logo-container">
+            <a href="index.html">
+                <span class="logo-text logo-invisible">J. Stansfield & Sons</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-button hover:text-[#C8AA6E] transition-colors duration-300">
+                Back to Homepage
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-8 max-w-7xl">
+            <!-- Our Services Section -->
+            <section id="about-section" class="w-full px-4 pt-8 pb-20 flex flex-col items-center text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6 text-[#C8AA6E]">About Us</h2>
+                <p class="text-lg lg:text-xl font-normal leading-relaxed max-w-3xl mx-auto mb-16">
+                    We pride ourselves on delivering exceptional quality across a range of bespoke property services. Explore our offerings below to learn more about how we can assist you.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full items-start">
+                    <!-- Service Cards -->
+                    <a href="aqua-blast.html" class="block transition-transform duration-300 hover:-translate-y-1">
+                        <div class="service-card h-full">
+                            <div class="flex items-center justify-center gap-x-3 mb-2">
+                                <img src="https://i.postimg.cc/9FQBfVPj/Generated-Image-September-21-2025-8-34-AM-removebg-preview.png" alt="Aqua Blast logo" class="h-8 w-auto">
+                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Aqua Blast</h3>
+                            </div>
+                            <img src="https://i.postimg.cc/j5vDZdnQ/Aqua-Blast.jpg" alt="High-pressure cleaning a stone patio" class="service-card-img mt-4">
+                        </div>
+                    </a>
+                    <a href="prestige-lawncare.html" class="block transition-transform duration-300 hover:-translate-y-1">
+                        <div class="service-card h-full">
+                            <div class="flex items-center justify-center gap-x-3 mb-2">
+                                <img src="https://i.postimg.cc/0Q8qMb2f/Generated-Image-September-21-2025-7-26-AM-removebg-preview.png" alt="Prestige Lawncare logo" class="h-8 w-auto">
+                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Prestige Lawncare</h3>
+                            </div>
+                            <img src="https://i.postimg.cc/xCSJ0YvK/IMG-0684.jpg" alt="Perfectly striped green lawn" class="service-card-img mt-4 object-top">
+                        </div>
+                    </a>
+                    <a href="omega-window-cleaning.html" class="block transition-transform duration-300 hover:-translate-y-1">
+                        <div class="service-card h-full">
+                            <div class="flex items-center justify-center gap-x-3 mb-2">
+                                <img src="https://i.postimg.cc/pTwfqkPZ/Generated-Image-September-21-2025-12-22-PM-removebg-preview.png" alt="Omega Window Cleaning logo" class="h-8 w-auto">
+                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Omega Window Cleaning</h3>
+                            </div>
+                            <img src="https://i.postimg.cc/pVS9TDJW/istockphoto-504403109-612x612.jpg" alt="Spotless window reflecting a clear blue sky" class="service-card-img mt-4">
+                        </div>
+                    </a>
+                    <a href="gutter-suckers.html" class="block transition-transform duration-300 hover:-translate-y-1">
+                        <div class="service-card h-full">
+                            <div class="flex items-center justify-center gap-x-3 mb-2">
+                                <img src="https://i.postimg.cc/KjtxPZNJ/Generated-Image-September-21-2025-3-22-AM-removebg-preview.png" alt="Gutter Suckers logo" class="h-8 w-auto">
+                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Gutter Suckers</h3>
+                            </div>
+                            <img src="https://i.postimg.cc/wTd1L9ZZ/Gutter-Vac-600x600.jpg" alt="Gutter cleaning with a powerful vacuum" class="service-card-img mt-4 object-top">
+                        </div>
+                    </a>
+                    <!-- Centered wrapper for the last card -->
+                    <div class="md:col-span-2 lg:col-start-2 lg:col-span-2 flex justify-center">
+                        <a href="the-fence-painter.html" class="block transition-transform duration-300 hover:-translate-y-1 w-full lg:w-1/2">
+                            <div class="service-card h-full">
+                                <div class="flex items-center justify-center gap-x-3 mb-2">
+                                    <img src="https://i.postimg.cc/DZ10K39t/Generated-Image-September-21-2025-1-56-PM-removebg-preview.png" alt="The Fence Painter logo" class="h-8 w-auto">
+                                    <h3 class="text-2xl font-medium text-[#C8AA6E]">The Fence Painter</h3>
+                                </div>
+                                <img src="https://i.postimg.cc/kXP7Q8Pv/Generated-Image-September-21-2025-1-05-PM.png" alt="A freshly painted dark grey fence" class="service-card-img mt-4">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bee Logo -->
+    <img src="https://i.postimg.cc/W47TxJnc/Golden-Bee-in-Reflection-removebg-preview.png" alt="Golden bee logo" class="bee-logo-img">
+
+</body>
+</html>
