@@ -17,6 +17,23 @@
         body {
             overflow-y: scroll;
         }
+        /* Styles for scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #project-modal.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #project-modal.is-active #modal-container {
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -39,44 +56,332 @@
         <div class="container mx-auto px-4 py-8 max-w-6xl">
             <!-- Gallery Section -->
             <section id="gallery-page" class="py-12 px-4">
-                <h1 class="shimmer-text text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center pb-2 mb-16">
-                    Our Work: Transformations
-                </h1>
+                <div class="text-center mb-16">
+                    <img src="https://i.postimg.cc/0Q8qMb2f/Generated-Image-September-21-2025-7-26-AM-removebg-preview.png" alt="Prestige Lawncare Brand Logo" class="w-20 md:w-28 h-auto mx-auto mb-4">
+                    <h1 class="shimmer-text text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center pb-2">
+                        Our Work: Transformations
+                    </h1>
+                    <p class="mt-4 text-lg lg:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+                        Below is a curated selection of our recent transformations, showcasing the quality, care, and attention to detail we bring to every project.
+                    </p>
+                </div>
+
+                <!-- Pet Waste Notice -->
+                <div class="max-w-4xl mx-auto border border-[#C8AA6E]/40 rounded-lg p-6 mb-16 bg-[#111111]/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-4 text-[#C8AA6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Important Notice Regarding Pet Waste</h2>
+                    <p class="text-center text-lg leading-relaxed">
+                        For the health and safety of our team, all work areas must be clear of pet waste (e.g., from cats and dogs) prior to our arrival. If the area is not cleared, a clean-up service will be required for an additional charge before any work can commence. This policy ensures a safe environment and prevents the spread of waste by our equipment. We appreciate your understanding.
+                    </p>
+                </div>
 
                 <!-- Gallery Grid -->
-                <div class="space-y-16">
+                <div>
 
-                    <!-- Project 1 -->
+                    <!-- Project 1 (New) -->
+                    <div class="scroll-animate" data-image-before="https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png" data-image-after="https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project One</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Fine Turf Restoration</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
+                    </div>
+                    <div class="max-w-3xl mx-auto mb-12 text-center md:text-left">
+                        <p class="text-lg leading-relaxed">
+                        This represents the pinnacle of lawn care, beginning with a multi-stage restoration. Maintaining its flawless, carpet-like finish requires a year-round, intensive program of expert mowing, strategic watering, bi-weekly fertilisation, proactive disease control, periodic verticutting, light seasonal renovations, and specialised winter care.
+                        </p>
+                        <a href="#" class="view-project-details group inline-flex items-center mt-6 text-sm text-[#C8AA6E] hover:text-white tracking-widest uppercase transition-colors duration-300">
+                            <span>View Project Details</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
-                            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Before</h2>
-                            <img src="https://i.postimg.cc/d0MCzFDK/Screenshot-2025-09-21-at-2-31-43-pm.png" alt="Before: Overgrown lawn" class="rounded-lg shadow-lg w-full">
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png" alt="Before: Overgrown garden path" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
                         </div>
                         <div>
-                            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">After</h2>
-                            <img src="https://i.postimg.cc/W3xtJ6rc/Screenshot-2025-09-21-at-2-36-22-pm.png" alt="After: Pristine, striped lawn" class="rounded-lg shadow-lg w-full">
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png" alt="After: Cleared and defined garden path" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
                         </div>
                     </div>
+                    </div>
 
-                    <!-- Project 2 -->
+                    <!-- Decorative Separator -->
+                    <div class="relative flex items-center justify-center my-16">
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                        <span class="flex-shrink mx-4">
+                            <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
+                                <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
+                            </svg>
+                        </span>
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                    </div>
+
+                    <!-- Project 2 (was 1) -->
+                    <div class="scroll-animate">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Two</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Intensive Lawn Reset</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
+                    </div>
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
+                        This severely overgrown lawn was brought back from waist-high neglect to a manageable state, establishing a foundation for future health. To suit your needs, all green waste can be prepared for the local council's collection, or we can remove it for recycling for an additional charge.
+                    </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
-                            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Before</h2>
-                            <img src="https://i.postimg.cc/JnrSc9Nb/Screenshot-2025-09-21-at-2-49-41-pm.png" alt="Before: Weedy garden area" class="rounded-lg shadow-lg w-full">
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/d0MCzFDK/Screenshot-2025-09-21-at-2-31-43-pm.png" alt="Before: Overgrown lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
                         </div>
                         <div>
-                            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">After</h2>
-                            <img src="https://i.postimg.cc/t4g5kpwR/Screenshot-2025-09-21-at-2-54-58-pm.png" alt="After: Manicured garden with fresh mulch" class="rounded-lg shadow-lg w-full">
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/sD8TPT7M/Screenshot-2025-09-22-at-10-42-31-am.png" alt="After: Pristine, striped lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
                         </div>
+                    </div>
+                    </div>
+
+                    <!-- Decorative Separator -->
+                    <div class="relative flex items-center justify-center my-16">
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                        <span class="flex-shrink mx-4">
+                            <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
+                                <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
+                            </svg>
+                        </span>
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                    </div>
+
+                    <!-- Project 3 (was 2) -->
+                    <div class="scroll-animate">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Three</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Intensive Lawn Reset (Mulching Cut)</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
+                    </div>
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
+                        An efficient lawn reset for moderately overgrown areas, this service utilizes a mulching cut to return vital nutrients to the soil while quickly restoring a clean, tidy appearance.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/JnrSc9Nb/Screenshot-2025-09-21-at-2-49-41-pm.png" alt="Before: Weedy garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/t4g5kpwR/Screenshot-2025-09-21-at-2-54-58-pm.png" alt="After: Manicured garden with fresh mulch" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Decorative Separator -->
+                    <div class="relative flex items-center justify-center my-16">
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                        <span class="flex-shrink mx-4">
+                            <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
+                                <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
+                            </svg>
+                        </span>
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                    </div>
+
+                    <!-- Project 4 (was 3) -->
+                    <div class="scroll-animate" data-image-before="https://i.postimg.cc/htjpq9rL/IMG-0504.jpg" data-image-after="https://i.postimg.cc/0ybLP6dw/B19-BC0-B7-D378-490-C-8927-11-E0-F24-E526-F.png">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Four</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Seasonal Refresh & Mow</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
+                    </div>
+                    <div class="max-w-3xl mx-auto mb-12 text-center md:text-left">
+                        <p class="text-lg leading-relaxed">
+                        This flexible monthly service provides a standard-quality mow for consistent upkeep. To prepare the area, clients can tidy beforehand or opt for our pre-mow clearing service for an additional charge. Regarding waste disposal, all debris can be prepared for local council collection or removed by us for recycling at an additional charge.
+                        </p>
+                        <a href="#" class="view-project-details group inline-flex items-center mt-6 text-sm text-[#C8AA6E] hover:text-white tracking-widest uppercase transition-colors duration-300">
+                            <span>View Project Details</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/htjpq9rL/IMG-0504.jpg" alt="Before: Large overgrown garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/0ybLP6dw/B19-BC0-B7-D378-490-C-8927-11-E0-F24-E526-F.png" alt="After: Cleared and manicured garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Decorative Separator -->
+                    <div class="relative flex items-center justify-center my-16">
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                        <span class="flex-shrink mx-4">
+                            <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
+                                <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
+                            </svg>
+                        </span>
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="scroll-animate">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Five</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Overdue Lawn Recovery</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
+                    </div>
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
+                        This service recovers severely overdue lawns, such as this project left for two months, bringing them back to a reasonable, manageable state. To suit your needs, all green waste can be prepared for the local council's collection, or we can remove it for recycling at an additional charge.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/zBhkPZhL/Screenshot-2025-09-22-at-12-35-46-pm.png" alt="Before: Overgrown lawn area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
+                            <div class="overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://i.postimg.cc/5yxF5ZSW/Screenshot-2025-09-22-at-12-37-37-pm.png" alt="After: Neatly mowed lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
                     </div>
 
                 </div>
             </section>
+
+            <!-- Back to Prestige Lawncare Button -->
+            <div class="text-center py-16">
+                <a href="prestige-lawncare.html" class="nav-button inline-block">
+                    Back to Prestige Lawncare
+                </a>
+            </div>
         </div>
     </main>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl p-8 max-w-5xl w-full mx-4 relative transform scale-95 transition-all duration-300">
+            <button id="modal-close" class="absolute -top-4 -right-4 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h3>
+                    <img id="modal-img-before" src="" alt="Before image" class="rounded-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h3>
+                    <img id="modal-img-after" src="" alt="After image" class="rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-24 right-8 z-50 p-3 rounded-full bg-[#C8AA6E]/20 text-[#C8AA6E] backdrop-blur-sm hover:bg-[#C8AA6E]/40 transition-all duration-300 opacity-0 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </a>
 
     <!-- Bee Logo -->
     <img src="https://i.postimg.cc/W47TxJnc/Golden-Bee-in-Reflection-removebg-preview.png" alt="Golden bee logo" class="bee-logo-img">
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll animation logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Optional: stop observing once it's visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Back to Top button logic
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 400) { // Show button after scrolling 400px
+                        backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                    } else {
+                        backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Modal logic
+            const modal = document.getElementById('project-modal');
+            if (modal) {
+                const modalClose = document.getElementById('modal-close');
+                const modalImgBefore = document.getElementById('modal-img-before');
+                const modalImgAfter = document.getElementById('modal-img-after');
+                const viewProjectLinks = document.querySelectorAll('.view-project-details');
+
+                viewProjectLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const projectWrapper = link.closest('.scroll-animate');
+                        const beforeSrc = projectWrapper.dataset.imageBefore;
+                        const afterSrc = projectWrapper.dataset.imageAfter;
+
+                        if (beforeSrc && afterSrc) {
+                            modalImgBefore.src = beforeSrc;
+                            modalImgAfter.src = afterSrc;
+                            modal.classList.add('is-active');
+                        }
+                    });
+                });
+
+                const closeModal = () => modal.classList.remove('is-active');
+
+                modalClose.addEventListener('click', closeModal);
+                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+                document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
+            }
+        });
+    </script>
 </body>
 </html>
