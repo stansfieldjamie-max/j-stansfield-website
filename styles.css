@@ -1,8 +1,3 @@
-/*
-  Importing Cormorant Garamond for a luxurious, classic aesthetic.
-*/
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
-
 body {
     /* Using a deep, rich black for the background that fills the entire viewport */
     background-color: #050505;
@@ -15,7 +10,21 @@ body {
     overflow-y: hidden; /* This prevents vertical scrolling by default */
 }
 
+header {
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+header.header-scrolled {
+    background-color: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
 .logo-invisible {
+    opacity: 0; /* Start invisible */
     /* Fine-tuning the size and spacing for a more intentional, high-end look */
     font-size: 0.875rem; /* Increased size for better visibility */
     letter-spacing: 0.3em; /* Reduced spacing to bring letters closer */
@@ -28,6 +37,10 @@ body {
 /* The new hover effect: slightly brighter color and a tiny scale transform */
 .logo-invisible:hover {
     color: #C8AA6E;
+}
+
+header.header-scrolled .logo-invisible {
+    opacity: 1; /* Make the logo visible on scroll */
 }
 
 .shimmer-text {
@@ -44,6 +57,18 @@ body {
     to { background-position: -200% 0; }
 }
 
+.large-bee-logo-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24rem; /* 384px */
+    height: auto;
+    opacity: 0.03; /* Even more subtle, like a true watermark */
+    z-index: -1; /* Behind the quote text */
+    transition: opacity 0.5s ease-in-out;
+}
+
 .bee-logo-img {
     /* Positioning the bee in the bottom right corner */
     position: fixed;
@@ -51,8 +76,23 @@ body {
     right: 2rem;
     width: 4rem; /* Making it a subtle size */
     height: auto;
-    opacity: 1; /* Set to full brightness */
-    transition: transform 0.3s ease-in-out; /* Only transition the transform */
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* On the homepage, the small bee starts hidden */
+.is-homepage .bee-logo-img {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* When scrolled, fade out large bee and fade in small bee */
+.is-homepage.scrolled-past-hero .large-bee-logo-img {
+    opacity: 0;
+}
+.is-homepage.scrolled-past-hero .bee-logo-img {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .bee-logo-img:hover {
@@ -145,4 +185,74 @@ body {
     width: 100%;
     object-fit: cover; /* Ensures the image covers the area without stretching */
     border-radius: 0.5rem; /* Gives the image slightly rounded corners */
+}
+
+.service-selector {
+    display: block;
+    padding: 1.5rem 1rem;
+    background-color: #111111;
+    border: 1px solid #ADA694;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.service-selector:hover {
+    border-color: #C8AA6E;
+    transform: translateY(-5px);
+    box-shadow: 0 0 2rem rgba(200, 170, 110, 0.2);
+}
+
+.service-selector img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-selector:hover img {
+    transform: scale(1.1);
+}
+/* Form Input Styling */
+.form-input {
+    appearance: none;
+    width: 100%;
+    background-color: #111111;
+    border: 1px solid #ADA694;
+    color: #ADA694;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    line-height: 1.5;
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+}
+
+.form-input::placeholder {
+    color: #ADA694;
+    opacity: 0.6;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #C8AA6E;
+    box-shadow: 0 0 0 2px rgba(200, 170, 110, 0.2);
+}
+
+textarea.form-input {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #C8AA6E;
+    color: #050505;
+    padding: 0.75rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #C8AA6E;
+}
+
+.submit-button:hover {
+    background-color: #050505;
+    color: #C8AA6E;
 }
