@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Image Comparison Slider Library -->
+    <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@8/dist/styles.css" />
+    <script src="https://unpkg.com/img-comparison-slider@8/dist/index.js" defer></script>
+
     <style>
         /* Allow scrolling on this page */
         body {
@@ -63,6 +67,14 @@
         #modal-thumbnails::-webkit-scrollbar { height: 8px; }
         #modal-thumbnails::-webkit-scrollbar-track { background: #111111; }
         #modal-thumbnails::-webkit-scrollbar-thumb { background: #C8AA6E; border-radius: 4px; }
+        /* Custom styles for the image comparison slider */
+        img-comparison-slider {
+            --divider-width: 1px;
+            --divider-color: #C8AA6E;
+            --handle-size: 30px;
+            --handle-color: #C8AA6E;
+            max-height: 95%;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -347,7 +359,7 @@
     </footer>
 
     <!-- Important Notice Modal -->
-    <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
+    <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center py-8 px-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
         <div class="bg-[#111111] rounded-lg shadow-2xl max-w-2xl w-full p-8 relative transform scale-95 transition-all duration-300 ease-in-out">
             <button id="notice-modal-close" class="absolute -top-4 -right-4 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors z-10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -365,44 +377,59 @@
     </div>
 
     <!-- Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
-        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl max-w-6xl w-full h-full max-h-[90vh] flex flex-col relative transform scale-95 transition-all duration-300 ease-in-out">
+    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center py-8 px-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
+        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl max-w-6xl w-full h-full flex flex-col relative transform scale-95 transition-all duration-300 ease-in-out">
             <button id="modal-close" class="absolute -top-4 -right-4 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors z-10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             
-            <!-- Image Container (fixed height) -->
-            <div class="relative flex-shrink-0 h-3/5 flex items-center justify-center p-4">
-                <!-- Main Image -->
-                <img id="modal-main-image" src="" alt="Project detail image" class="rounded-lg max-w-full max-h-full object-contain">
+            <div id="gallery-view-wrapper" class="h-full flex flex-col">
+                <!-- Image Container (fixed height) -->
+                <div class="relative flex-shrink-0 h-3/5 flex items-center justify-center p-4">
+                    <!-- Main Image -->
+                    <img id="modal-main-image" src="" alt="Project detail image" class="rounded-lg max-w-full max-h-full object-contain">
 
-                <!-- Navigation Arrows -->
-                <button id="modal-prev" class="absolute top-1/2 left-0 md:-left-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                </button>
-                <button id="modal-next" class="absolute top-1/2 right-0 md:-right-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                </button>
-            </div>
+                    <!-- Navigation Arrows -->
+                    <button id="modal-prev" class="absolute top-1/2 left-0 md:-left-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="modal-next" class="absolute top-1/2 right-0 md:-right-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
 
-            <!-- Thumbnail Strip -->
-            <div id="modal-thumbnails-container" class="flex-shrink-0 p-4 border-t border-b border-[#ADA694]/20">
-                <div id="modal-thumbnails" class="flex space-x-3 overflow-x-auto">
-                    <!-- Thumbnails will be injected here by JS -->
+                <!-- Thumbnail Strip -->
+                <div id="modal-thumbnails-container" class="relative flex-shrink-0 p-4 border-t border-b border-[#ADA694]/20">
+                    <div id="modal-thumbnails" class="flex space-x-3 overflow-x-auto">
+                        <!-- Thumbnails will be injected here by JS -->
+                    </div>
+                </div>
+
+                <!-- Text Content (scrollable) -->
+                <div class="flex-grow overflow-y-auto p-6 md:p-8">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="flex justify-between items-baseline">
+                            <h3 id="modal-caption" class="text-3xl text-[#C8AA6E] font-bold tracking-wider"></h3>
+                            <p id="modal-counter" class="text-sm text-[#ADA694]/70 tracking-widest"></p>
+                        </div>
+                        <div class="border-t border-[#ADA694]/20 my-4"></div>
+                        <p id="modal-description" class="text-xl text-[#ADA694] leading-loose text-left"></p>
+                        <div id="compare-btn-container" class="text-center mt-8"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Text Content (scrollable) -->
-            <div class="flex-grow overflow-y-auto p-6 md:p-8">
-                <div class="max-w-3xl mx-auto">
-                    <div class="flex justify-between items-baseline">
-                        <h3 id="modal-caption" class="text-3xl text-[#C8AA6E] font-bold tracking-wider"></h3>
-                        <p id="modal-counter" class="text-sm text-[#ADA694]/70 tracking-widest"></p>
-                    </div>
-                    <div class="border-t border-[#ADA694]/20 my-4"></div>
-                    <p id="modal-description" class="text-xl text-[#ADA694] leading-loose text-left"></p>
+            <div id="compare-view-wrapper" class="hidden h-full flex flex-col p-4">
+                <div class="flex-grow flex items-center justify-center">
+                    <img-comparison-slider class="rounded-lg shadow-2xl">
+                        <img slot="first" id="compare-img-before" src="" />
+                        <img slot="second" id="compare-img-after" src="" />
+                    </img-comparison-slider>
+                </div>
+                <div class="flex-shrink-0 text-center pt-4">
+                    <button id="back-to-gallery-btn" class="nav-button">Back to Gallery</button>
                 </div>
             </div>
         </div>
@@ -457,6 +484,11 @@
                 const modalNext = document.getElementById('modal-next');
                 const modalThumbnails = document.getElementById('modal-thumbnails');
                 const viewProjectLinks = document.querySelectorAll('.view-project-details');
+                const galleryView = document.getElementById('gallery-view-wrapper');
+                const compareView = document.getElementById('compare-view-wrapper');
+                const compareBtnContainer = document.getElementById('compare-btn-container');
+                const compareImgBefore = document.getElementById('compare-img-before');
+                const compareImgAfter = document.getElementById('compare-img-after');
 
                 const showImage = (index) => {
                     currentIndex = index;
@@ -493,6 +525,29 @@
                     });
                 };
 
+                const setupCompareButton = (images) => {
+                    compareBtnContainer.innerHTML = '';
+                    if (images.length > 2) {
+                        const btn = document.createElement('button');
+                        btn.id = 'compare-toggle-btn';
+                        btn.className = 'nav-button';
+                        btn.textContent = 'Compare Before & After';
+                        btn.addEventListener('click', () => {
+                            galleryView.classList.add('hidden');
+                            compareView.classList.remove('hidden');
+                            compareImgBefore.src = images[0].src;
+                            compareImgAfter.src = images[images.length - 1].src;
+                        });
+                        compareBtnContainer.appendChild(btn);
+
+                        const backBtn = document.getElementById('back-to-gallery-btn');
+                        backBtn.addEventListener('click', () => {
+                            galleryView.classList.remove('hidden');
+                            compareView.classList.add('hidden');
+                        });
+                    }
+                };
+
                 const generateThumbnails = (images) => {
                     modalThumbnails.innerHTML = ''; // Clear existing thumbnails
                     const container = document.getElementById('modal-thumbnails-container');
@@ -523,6 +578,7 @@
                             if (imagesDataString) {
                                 currentImages = JSON.parse(imagesDataString);
                                 generateThumbnails(currentImages);
+                                setupCompareButton(currentImages);
                                 showImage(0);
                                 modal.classList.add('is-active');
                                 document.documentElement.classList.add('modal-is-open');
