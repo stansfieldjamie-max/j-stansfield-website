@@ -17,6 +17,9 @@
         body {
             overflow-y: scroll;
         }
+        html.modal-is-open {
+            overflow: hidden;
+        }
         /* Styles for scroll animations */
         .scroll-animate {
             opacity: 0;
@@ -34,6 +37,32 @@
         #project-modal.is-active #modal-container {
             transform: scale(1);
         }
+        #notice-modal.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #notice-modal.is-active > div {
+            transform: scale(1);
+        }
+        /* Thumbnail styles */
+        .thumbnail-img {
+            height: 72px;
+            width: auto;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .thumbnail-img:hover {
+            border-color: #ADA694;
+        }
+        .thumbnail-img.is-active {
+            border-color: #C8AA6E;
+        }
+        /* Custom scrollbar for thumbnails */
+        #modal-thumbnails::-webkit-scrollbar { height: 8px; }
+        #modal-thumbnails::-webkit-scrollbar-track { background: #111111; }
+        #modal-thumbnails::-webkit-scrollbar-thumb { background: #C8AA6E; border-radius: 4px; }
     </style>
 </head>
 <body class="antialiased">
@@ -54,7 +83,7 @@
                 <div class="text-center mb-16">
                     <!-- Breadcrumb Link -->
                     <a href="prestige-lawncare.html" class="group inline-flex items-center text-lg text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 mb-8">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
                         <span>Back to Prestige Lawncare</span>
@@ -69,43 +98,32 @@
                     </p>
                 </div>
 
-                <!-- Pet Waste Notice -->
-                <div class="max-w-4xl mx-auto border border-[#C8AA6E]/40 rounded-lg p-6 mb-16 bg-[#111111]/50">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-4 text-[#C8AA6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Important Notice Regarding Pet Waste</h2>
-                    <p class="text-center text-lg leading-relaxed">
-                        For the health and safety of our team, all work areas must be clear of pet waste (e.g., from cats and dogs) prior to our arrival. If the area is not cleared, a clean-up service will be required for an additional charge before any work can commence. This policy ensures a safe environment and prevents the spread of waste by our equipment. We appreciate your understanding.
-                    </p>
+                <!-- Important Notice Link -->
+                <div class="text-center mb-16">
+                    <a href="#" id="open-notice-modal" class="nav-link text-lg inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        A Quick Guide to a Perfect Project Start
+                    </a>
                 </div>
 
                 <!-- Gallery Grid -->
                 <div>
 
+                    <!-- Decorative Separator -->
+                    <div class="relative flex items-center justify-center my-16">
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                        <span class="flex-shrink mx-4">
+                            <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
+                                <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
+                            </svg>
+                        </span>
+                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                    </div>
+
                     <!-- Project 1 (New) -->
-                    <div class="scroll-animate" data-images='[
-                        {"src": "https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png", "caption": "Before"},
-                        {"src": "https://i.postimg.cc/Xq9L82BM/Screenshot-2025-09-23-at-2-24-43-am.png", "caption": "During - Step 1"},
-                        {"src": "https://i.postimg.cc/pVQKs51t/Screenshot-2025-09-23-at-2-25-04-am.png", "caption": "During - Step 2"},
-                        {"src": "https://i.postimg.cc/wvgjMM5h/Screenshot-2025-09-23-at-2-25-27-am.png", "caption": "During - Step 3"},
-                        {"src": "https://i.postimg.cc/9Q9mBZJd/Screenshot-2025-09-23-at-2-25-45-am.png", "caption": "During - Step 4"},
-                        {"src": "https://i.postimg.cc/44MRFnKB/Screenshot-2025-09-23-at-2-25-59-am.png", "caption": "During - Step 5"},
-                        {"src": "https://i.postimg.cc/Fzk8QgfG/Screenshot-2025-09-23-at-2-26-34-am.png", "caption": "During - Step 6"},
-                        {"src": "https://i.postimg.cc/J4Z7NjTb/Screenshot-2025-09-23-at-2-26-51-am.png", "caption": "During - Step 7"},
-                        {"src": "https://i.postimg.cc/fLVDJdtS/Screenshot-2025-09-23-at-2-27-10-am.png", "caption": "During - Step 8"},
-                        {"src": "https://i.postimg.cc/2ypRyKNg/Screenshot-2025-09-23-at-2-27-37-am.png", "caption": "During - Step 9"},
-                        {"src": "https://i.postimg.cc/cHn2pBth/Screenshot-2025-09-23-at-2-27-54-am.png", "caption": "During - Step 10"},
-                        {"src": "https://i.postimg.cc/fR1vGn74/Screenshot-2025-09-23-at-2-28-50-am.png", "caption": "During - Step 11"},
-                        {"src": "https://i.postimg.cc/yx6hmVKR/Screenshot-2025-09-23-at-2-28-29-am.png", "caption": "During - Step 12"},
-                        {"src": "https://i.postimg.cc/G3zxcsPx/Screenshot-2025-09-23-at-2-29-23-am.png", "caption": "During - Step 13"},
-                        {"src": "https://i.postimg.cc/tCMd6QM1/Screenshot-2025-09-23-at-2-29-51-am.png", "caption": "During - Step 14"},
-                        {"src": "https://i.postimg.cc/HnjcWjH6/Screenshot-2025-09-23-at-2-30-24-am.png", "caption": "During - Step 15"},
-                        {"src": "https://i.postimg.cc/zDPHtwS6/Screenshot-2025-09-23-at-2-30-57-am.png", "caption": "During - Step 16"},
-                        {"src": "https://i.postimg.cc/bJwdLdGq/Screenshot-2025-09-23-at-2-32-24-am.png", "caption": "During - Step 17"},
-                        {"src": "https://i.postimg.cc/L5rXHTxs/Screenshot-2025-09-23-at-2-35-00-am.png", "caption": "During - Step 18"},
-                        {"src": "https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png", "caption": "After"}
-                    ]'>
+                    <div id="project-1" class="scroll-animate">
                     <div class="relative text-center mb-12">
                         <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project One</span>
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Fine Turf Restoration</h3>
@@ -115,25 +133,27 @@
                         <p class="text-lg leading-relaxed">
                         This represents the pinnacle of lawn care, beginning with a multi-stage restoration. Maintaining its flawless, carpet-like finish requires a year-round, intensive program of expert mowing, strategic watering, bi-weekly fertilisation, proactive disease control, periodic verticutting, light seasonal renovations, and specialised winter care.
                         </p>
-                        <a href="#" class="view-project-details group inline-flex items-center mt-6 text-sm text-[#C8AA6E] hover:text-white tracking-widest uppercase transition-colors duration-300">
-                            <span>View Project Details</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png" alt="Before: Overgrown garden path" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <a href="#" class="view-project-details group relative block" data-project-id="project-1">
+                                <img src="https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png" alt="Before: Overgrown garden path" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
+                                    <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
+                                </div>
+                            </a>
                         </div>
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png" alt="After: Cleared and defined garden path" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <a href="#" class="view-project-details group relative block" data-project-id="project-1">
+                                <img src="https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png" alt="After: Cleared and defined garden path" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
+                                    <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     </div>
@@ -162,15 +182,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/d0MCzFDK/Screenshot-2025-09-21-at-2-31-43-pm.png" alt="Before: Overgrown lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <img src="https://i.postimg.cc/d0MCzFDK/Screenshot-2025-09-21-at-2-31-43-pm.png" alt="Before: Overgrown lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105 rounded-lg">
                         </div>
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/sD8TPT7M/Screenshot-2025-09-22-at-10-42-31-am.png" alt="After: Pristine, striped lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <img src="https://i.postimg.cc/sD8TPT7M/Screenshot-2025-09-22-at-10-42-31-am.png" alt="After: Pristine, striped lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105 rounded-lg">
                         </div>
                     </div>
                     </div>
@@ -199,15 +215,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/JnrSc9Nb/Screenshot-2025-09-21-at-2-49-41-pm.png" alt="Before: Weedy garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <img src="https://i.postimg.cc/JnrSc9Nb/Screenshot-2025-09-21-at-2-49-41-pm.png" alt="Before: Weedy garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105 rounded-lg">
                         </div>
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/t4g5kpwR/Screenshot-2025-09-21-at-2-54-58-pm.png" alt="After: Manicured garden with fresh mulch" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <img src="https://i.postimg.cc/t4g5kpwR/Screenshot-2025-09-21-at-2-54-58-pm.png" alt="After: Manicured garden with fresh mulch" class="w-full transition-transform duration-300 ease-in-out hover:scale-105 rounded-lg">
                         </div>
                     </div>
                     </div>
@@ -224,10 +236,7 @@
                     </div>
 
                     <!-- Project 4 (was 3) -->
-                    <div class="scroll-animate" data-images='[
-                        {"src": "https://i.postimg.cc/htjpq9rL/IMG-0504.jpg", "caption": "Before"},
-                        {"src": "https://i.postimg.cc/0ybLP6dw/B19-BC0-B7-D378-490-C-8927-11-E0-F24-E526-F.png", "caption": "After"}
-                    ]'>
+                    <div id="project-4" class="scroll-animate">
                     <div class="relative text-center mb-12">
                         <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Four</span>
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Seasonal Refresh & Mow</h3>
@@ -237,25 +246,27 @@
                         <p class="text-lg leading-relaxed">
                         This flexible monthly service provides a standard-quality mow for consistent upkeep. To prepare the area, clients can tidy beforehand or opt for our pre-mow clearing service for an additional charge. Regarding waste disposal, all debris can be prepared for local council collection or removed by us for recycling at an additional charge.
                         </p>
-                        <a href="#" class="view-project-details group inline-flex items-center mt-6 text-sm text-[#C8AA6E] hover:text-white tracking-widest uppercase transition-colors duration-300">
-                            <span>View Project Details</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/htjpq9rL/IMG-0504.jpg" alt="Before: Large overgrown garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <a href="#" class="view-project-details group relative block" data-project-id="project-4">
+                                <img src="https://i.postimg.cc/htjpq9rL/IMG-0504.jpg" alt="Before: Large overgrown garden area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
+                                    <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
+                                </div>
+                            </a>
                         </div>
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/0ybLP6dw/B19-BC0-B7-D378-490-C-8927-11-E0-F24-E526-F.png" alt="After: Cleared and manicured garden area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <a href="#" class="view-project-details group relative block" data-project-id="project-4">
+                                <img src="https://i.postimg.cc/0ybLP6dw/B19-BC0-B7-D378-490-C-8927-11-E0-F24-E526-F.png" alt="After: Cleared and manicured garden area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
+                                    <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     </div>
@@ -284,62 +295,115 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/zBhkPZhL/Screenshot-2025-09-22-at-12-35-46-pm.png" alt="Before: Overgrown lawn area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <img src="https://i.postimg.cc/zBhkPZhL/Screenshot-2025-09-22-at-12-35-46-pm.png" alt="Before: Overgrown lawn area" class="w-full transition-transform duration-300 ease-in-out hover:scale-105 rounded-lg">
                         </div>
                         <div>
                             <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                            <div class="overflow-hidden rounded-lg shadow-lg">
-                                <img src="https://i.postimg.cc/5yxF5ZSW/Screenshot-2025-09-22-at-12-37-37-pm.png" alt="After: Neatly mowed lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105">
-                            </div>
+                            <img src="https://i.postimg.cc/5yxF5ZSW/Screenshot-2025-09-22-at-12-37-37-pm.png" alt="After: Neatly mowed lawn" class="w-full transition-transform duration-300 ease-in-out hover:scale-105 rounded-lg">
                         </div>
                     </div>
                     </div>
 
                 </div>
             </section>
-
-            <!-- Back to Top Button -->
-            <div class="text-center py-16">
-                <a href="#" id="back-to-top" class="inline-block p-3 rounded-full bg-[#C8AA6E]/20 text-[#C8AA6E] backdrop-blur-sm hover:bg-[#C8AA6E]/40 transition-all duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-                    </svg>
-                </a>
-            </div>
-
         </div>
     </main>
+
+    <!-- Gallery Data -->
+    <script type="application/json" id="project-1-data">
+    [
+        {"src": "https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png", "caption": "Before", "description": "The initial state of the lawn, showing significant thatch buildup, moss, and a lack of definition."},
+        {"src": "https://i.postimg.cc/Xq9L82BM/Screenshot-2025-09-23-at-2-24-43-am.png", "caption": "During - Step 1", "description": "The restoration begins with aggressive scarification, a crucial first step to remove thatch and moss, allowing the soil to breathe."},
+        {"src": "https://i.postimg.cc/pVQKs51t/Screenshot-2025-09-23-at-2-25-04-am.png", "caption": "During - Step 2", "description": "With scarification complete, the lawn is now prepared for new life, free from the suffocating layer of organic matter."},
+        {"src": "https://i.postimg.cc/wvgjMM5h/Screenshot-2025-09-23-at-2-25-27-am.png", "caption": "During - Step 3", "description": "A generous overseeding with a premium turf-grade seed mix is applied, laying the foundation for a dense and vibrant new lawn."},
+        {"src": "https://i.postimg.cc/9Q9mBZJd/Screenshot-2025-09-23-at-2-25-45-am.png", "caption": "During - Step 4", "description": "The process of top dressing begins. A carefully selected blend of sand and soil is introduced to level the surface and create the perfect seedbed."},
+        {"src": "https://i.postimg.cc/44MRFnKB/Screenshot-2025-09-23-at-2-25-59-am.png", "caption": "During - Step 5", "description": "The top dressing is now complete, providing a nutrient-rich and protective environment essential for optimal seed germination."},
+        {"src": "https://i.postimg.cc/Fzk8QgfG/Screenshot-2025-09-23-at-2-26-34-am.png", "caption": "During - Step 6", "description": "Every element is meticulously distributed for uniform growth. We believe in leaving a worksite as pristine as the lawns we create."},
+        {"src": "https://i.postimg.cc/J4Z7NjTb/Screenshot-2025-09-23-at-2-26-51-am.png", "caption": "During - Step 7", "description": "The foundational renovation work is complete. The lawn now enters a critical phase of nurturing, poised for transformation."},
+        {"src": "https://i.postimg.cc/fLVDJdtS/Screenshot-2025-09-23-at-2-27-10-am.png", "caption": "During - Step 8", "description": "The crucial watering phase commences. The surface is kept consistently moist—a demanding but non-negotiable task to ensure successful germination."},
+        {"src": "https://i.postimg.cc/2ypRyKNg/Screenshot-2025-09-23-at-2-27-37-am.png", "caption": "During - Step 9", "description": "Patience and persistence. The key during this stage is maintaining constant surface moisture, creating the ideal conditions for the new seeds to awaken."},
+        {"src": "https://i.postimg.cc/cHn2pBth/Screenshot-2025-09-23-at-2-27-54-am.png", "caption": "During - Step 10", "description": "The 'moment of doubt'. Every great renovation has one. It may look like we've declared war on your lawn, but trust the process—this is the chaotic canvas upon which a masterpiece is built."},
+        {"src": "https://i.postimg.cc/fR1vGn74/Screenshot-2025-09-23-at-2-28-50-am.png", "caption": "During - Step 11", "description": "Success! The first signs of life emerge as a delicate green haze appears across the lawn. The germination phase is underway."},
+        {"src": "https://i.postimg.cc/yx6hmVKR/Screenshot-2025-09-23-at-2-28-29-am.png", "caption": "During - Step 12", "description": "The new growth accelerates, transforming the bare soil into a vibrant carpet of young, healthy grass blades."},
+        {"src": "https://i.postimg.cc/G3zxcsPx/Screenshot-2025-09-23-at-2-29-23-am.png", "caption": "During - Step 13", "description": "Momentum builds. The lawn is now establishing itself with vigor, rapidly gaining density and strength."},
+        {"src": "https://i.postimg.cc/tCMd6QM1/Screenshot-2025-09-23-at-2-29-51-am.png", "caption": "During - Step 14", "description": "The day before the inaugural cut. The young turf has reached the perfect height, ready for its first gentle trim to encourage thickening."},
+        {"src": "https://i.postimg.cc/HnjcWjH6/Screenshot-2025-09-23-at-2-30-24-am.png", "caption": "During - Step 15", "description": "The first cut is performed with a high-lift rotary mower, carefully trimming the tips of the grass to stimulate lateral growth and increase turf density."},
+        {"src": "https://i.postimg.cc/zDPHtwS6/Screenshot-2025-09-23-at-2-30-57-am.png", "caption": "During - Step 16", "description": "Meticulous hand-weeding. A crucial choice in this renovation was to forgo broad-spectrum herbicides to protect the property's decorative plants. This patient approach means some weeds will inevitably emerge with the new grass. We address this by hand-weeding in the first season, applying a selective weed killer only in the second year once the new turf is mature enough to thrive, ensuring a pure and unblemished final result."},
+        {"src": "https://i.postimg.cc/bJwdLdGq/Screenshot-2025-09-23-at-2-32-24-am.png", "caption": "During - Step 17", "description": "The introduction of the cylinder mower. This precision instrument provides a scissor-like cut, creating the sharp, clean finish that is the hallmark of a fine turf."},
+        {"src": "https://i.postimg.cc/L5rXHTxs/Screenshot-2025-09-23-at-2-35-00-am.png", "caption": "During - Step 18", "description": "The artistry begins. To ensure lawn health, we vary the mowing pattern with each cut. This is where the lawn becomes a canvas, with classic stripes or checkerboards enhancing its visual appeal."},
+        {"src": "https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png", "caption": "After", "description": "The final result: a perfectly restored, dense, and vibrant carpet-like turf that defines the property."}
+    ]
+    </script>
+    <script type="application/json" id="project-4-data">
+    [
+        {"src": "https://i.postimg.cc/htjpq9rL/IMG-0504.jpg", "caption": "Before", "description": "The lawn prior to our seasonal refresh and mow."},
+        {"src": "https://i.postimg.cc/0ybLP6dw/B19-BC0-B7-D378-490-C-8927-11-E0-F24-E526-F.png", "caption": "After", "description": "The lawn after our service, looking clean and well-maintained."}
+    ]
+    </script>
 
     <!-- Footer -->
     <footer class="text-center py-8 px-4 border-t border-[#ADA694]/10 mt-auto">
         <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2024 J. Stansfield & Sons. All Rights Reserved.</p>
     </footer>
 
-    <!-- Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl p-6 md:p-8 max-w-6xl w-full mx-4 relative transform scale-95 transition-all duration-300">
-            <button id="modal-close" class="absolute -top-4 -right-4 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors">
+    <!-- Important Notice Modal -->
+    <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
+        <div class="bg-[#111111] rounded-lg shadow-2xl max-w-2xl w-full p-8 relative transform scale-95 transition-all duration-300 ease-in-out">
+            <button id="notice-modal-close" class="absolute -top-4 -right-4 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors z-10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-4 text-[#C8AA6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Important Notice Regarding Pet Waste</h2>
+            <p class="text-center text-lg leading-relaxed">
+                For the health and safety of our team, all work areas must be clear of pet waste (e.g., from cats and dogs) prior to our arrival. If the area is not cleared, a clean-up service will be required for an additional charge before any work can commence. This policy ensures a safe environment and prevents the spread of waste by our equipment. We appreciate your understanding.
+            </p>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
+        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl max-w-6xl w-full h-full max-h-[90vh] flex flex-col relative transform scale-95 transition-all duration-300 ease-in-out">
+            <button id="modal-close" class="absolute -top-4 -right-4 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Image Container (fixed height) -->
+            <div class="relative flex-shrink-0 h-3/5 flex items-center justify-center p-4">
                 <!-- Main Image -->
-                <img id="modal-main-image" src="" alt="Project detail image" class="rounded-lg w-full max-h-[75vh] object-contain">
+                <img id="modal-main-image" src="" alt="Project detail image" class="rounded-lg max-w-full max-h-full object-contain">
 
                 <!-- Navigation Arrows -->
-                <button id="modal-prev" class="absolute top-1/2 left-0 md:-left-16 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-colors duration-300">
+                <button id="modal-prev" class="absolute top-1/2 left-0 md:-left-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
                 </button>
-                <button id="modal-next" class="absolute top-1/2 right-0 md:-right-16 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-colors duration-300">
+                <button id="modal-next" class="absolute top-1/2 right-0 md:-right-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
                 </button>
             </div>
-            <div class="flex justify-between items-center mt-4">
-                <p id="modal-caption" class="text-lg text-[#ADA694] font-medium tracking-wider"></p>
-                <p id="modal-counter" class="text-sm text-[#ADA694]/70 tracking-widest"></p>
+
+            <!-- Thumbnail Strip -->
+            <div id="modal-thumbnails-container" class="flex-shrink-0 p-4 border-t border-b border-[#ADA694]/20">
+                <div id="modal-thumbnails" class="flex space-x-3 overflow-x-auto">
+                    <!-- Thumbnails will be injected here by JS -->
+                </div>
+            </div>
+
+            <!-- Text Content (scrollable) -->
+            <div class="flex-grow overflow-y-auto p-6 md:p-8">
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex justify-between items-baseline">
+                        <h3 id="modal-caption" class="text-3xl text-[#C8AA6E] font-bold tracking-wider"></h3>
+                        <p id="modal-counter" class="text-sm text-[#ADA694]/70 tracking-widest"></p>
+                    </div>
+                    <div class="border-t border-[#ADA694]/20 my-4"></div>
+                    <p id="modal-description" class="text-xl text-[#ADA694] leading-loose text-left"></p>
+                </div>
             </div>
         </div>
     </div>
@@ -378,18 +442,6 @@
                 observer.observe(el);
             });
 
-            // Back to Top button logic
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                backToTopButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-
             // Modal logic
             const modal = document.getElementById('project-modal');
             if (modal) {
@@ -400,36 +452,89 @@
                 const modalMainImage = document.getElementById('modal-main-image');
                 const modalCaption = document.getElementById('modal-caption');
                 const modalCounter = document.getElementById('modal-counter');
+                const modalDescription = document.getElementById('modal-description');
                 const modalPrev = document.getElementById('modal-prev');
                 const modalNext = document.getElementById('modal-next');
+                const modalThumbnails = document.getElementById('modal-thumbnails');
                 const viewProjectLinks = document.querySelectorAll('.view-project-details');
 
                 const showImage = (index) => {
-                    modalMainImage.src = currentImages[index].src;
-                    modalCaption.textContent = currentImages[index].caption;
+                    currentIndex = index;
+                    const imageData = currentImages[index];
+
+                    modalMainImage.src = imageData.src;
+                    modalMainImage.alt = imageData.caption;
+                    modalCaption.textContent = imageData.caption;
                     modalCounter.textContent = `${index + 1} / ${currentImages.length}`;
+
+                    if (imageData.description) {
+                        modalDescription.textContent = imageData.description;
+                        modalDescription.style.display = 'block';
+                    } else {
+                        modalDescription.textContent = '';
+                        modalDescription.style.display = 'none';
+                    }
+
                     // Hide nav buttons if only one image
                     const showNav = currentImages.length > 1;
                     modalPrev.style.display = showNav ? 'block' : 'none';
                     modalNext.style.display = showNav ? 'block' : 'none';
+
+                    // Update active thumbnail
+                    const thumbnails = modalThumbnails.querySelectorAll('.thumbnail-img');
+                    thumbnails.forEach((thumb, thumbIndex) => {
+                        if (thumbIndex === index) {
+                            thumb.classList.add('is-active');
+                            // Scroll thumbnail into view
+                            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        } else {
+                            thumb.classList.remove('is-active');
+                        }
+                    });
+                };
+
+                const generateThumbnails = (images) => {
+                    modalThumbnails.innerHTML = ''; // Clear existing thumbnails
+                    const container = document.getElementById('modal-thumbnails-container');
+                    if (images.length <= 1) {
+                        container.style.display = 'none';
+                        return;
+                    }
+                    container.style.display = 'block';
+
+                    images.forEach((image, index) => {
+                        const thumb = document.createElement('img');
+                        thumb.src = image.src;
+                        thumb.classList.add('thumbnail-img');
+                        thumb.dataset.index = index;
+                        thumb.addEventListener('click', () => { showImage(index); });
+                        modalThumbnails.appendChild(thumb);
+                    });
                 };
 
                 viewProjectLinks.forEach(link => {
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
-                        const projectWrapper = link.closest('.scroll-animate');
-                        const imagesData = projectWrapper.dataset.images;
+                        const projectId = link.dataset.projectId;
+                        const dataScript = document.getElementById(`${projectId}-data`);
 
-                        if (imagesData) {
-                            currentImages = JSON.parse(imagesData);
-                            currentIndex = 0;
-                            showImage(currentIndex);
-                            modal.classList.add('is-active');
+                        if (dataScript) {
+                            const imagesDataString = dataScript.textContent;
+                            if (imagesDataString) {
+                                currentImages = JSON.parse(imagesDataString);
+                                generateThumbnails(currentImages);
+                                showImage(0);
+                                modal.classList.add('is-active');
+                                document.documentElement.classList.add('modal-is-open');
+                            }
                         }
                     });
                 });
 
-                const closeModal = () => modal.classList.remove('is-active');
+                const closeModal = () => {
+                    modal.classList.remove('is-active');
+                    document.documentElement.classList.remove('modal-is-open');
+                };
 
                 modalPrev.addEventListener('click', () => {
                     currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentImages.length - 1;
@@ -443,6 +548,31 @@
                 modalClose.addEventListener('click', closeModal);
                 modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
                 document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
+            }
+
+            // Notice Modal Logic
+            const noticeModal = document.getElementById('notice-modal');
+            if (noticeModal) {
+                const openNoticeButton = document.getElementById('open-notice-modal');
+                const closeNoticeButton = document.getElementById('notice-modal-close');
+
+                const openNoticeModal = () => {
+                    noticeModal.classList.add('is-active');
+                    document.documentElement.classList.add('modal-is-open');
+                };
+
+                const closeNoticeModal = () => {
+                    noticeModal.classList.remove('is-active');
+                    document.documentElement.classList.remove('modal-is-open');
+                };
+
+                openNoticeButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openNoticeModal();
+                });
+
+                closeNoticeButton.addEventListener('click', closeNoticeModal);
+                noticeModal.addEventListener('click', (e) => { if (e.target === noticeModal) closeNoticeModal(); });
             }
         });
     </script>
