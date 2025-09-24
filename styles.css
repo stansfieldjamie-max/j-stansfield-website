@@ -23,24 +23,28 @@ header.header-scrolled {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
-.logo-invisible {
-    opacity: 0; /* Start invisible */
+.logo-text {
+    opacity: 1; /* Visible by default on all pages */
     /* Fine-tuning the size and spacing for a more intentional, high-end look */
     font-size: 0.875rem; /* Increased size for better visibility */
     letter-spacing: 0.3em; /* Reduced spacing to bring letters closer */
     color: #ADA694; /* Starting color to match nav links */
     font-weight: 300; /* Lighter font weight for elegance */
-    /* Adding a transition for a smooth hover effect */
     transition: all 0.3s ease-in-out;
 }
 
 /* The new hover effect: slightly brighter color and a tiny scale transform */
-.logo-invisible:hover {
+.logo-text:hover {
     color: #C8AA6E;
 }
 
 header.header-scrolled .logo-invisible {
     opacity: 1; /* Make the logo visible on scroll */
+}
+
+/* On the homepage specifically, start the logo as invisible */
+.is-homepage .logo-text {
+    opacity: 0;
 }
 
 .shimmer-text {
