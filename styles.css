@@ -172,6 +172,7 @@ header.header-scrolled .logo-invisible {
 .nav-button:hover {
     border-color: #C8AA6E; /* Border brightens to gold on hover */
 }
+
 .service-card {
     background-color: #111111;
     padding: 2rem;

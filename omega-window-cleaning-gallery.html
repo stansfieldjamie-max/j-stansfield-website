@@ -17,65 +17,8 @@
     <script src="https://unpkg.com/img-comparison-slider@8/dist/index.js" defer></script>
 
     <style>
-        /* Allow scrolling on this page */
         body {
             overflow-y: scroll;
-        }
-        html.modal-is-open {
-            overflow: hidden;
-        }
-        /* Styles for scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #project-modal.is-active {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #project-modal.is-active #modal-container {
-            transform: scale(1);
-        }
-        #notice-modal.is-active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #notice-modal.is-active > div {
-            transform: scale(1);
-        }
-        /* Thumbnail styles */
-        .thumbnail-img {
-            height: 72px;
-            width: auto;
-            border-radius: 4px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-        .thumbnail-img:hover {
-            border-color: #ADA694;
-        }
-        .thumbnail-img.is-active {
-            border-color: #C8AA6E;
-        }
-        /* Hide scrollbar for thumbnails but allow scrolling */
-        #modal-thumbnails {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-        #modal-thumbnails::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
-        /* Custom styles for the image comparison slider */
-        img-comparison-slider {
-            --divider-width: 1px;
-            --divider-color: #C8AA6E;
-            --handle-size: 30px;
-            --handle-color: #C8AA6E;
-            max-height: 95%;
         }
     </style>
 </head>
@@ -112,174 +55,31 @@
                     </p>
                 </div>
 
-                <!-- Important Notice Link -->
-                <div class="text-center mb-16">
-                    <a href="#" id="open-notice-modal" class="nav-link text-lg inline-flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <!-- Decorative Separator -->
+                <div class="relative flex items-center justify-center my-16">
+                    <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
+                    <span class="flex-shrink mx-4">
+                        <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
+                            <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
                         </svg>
-                        A Quick Guide to a Perfect Project Start
-                    </a>
+                    </span>
+                    <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                 </div>
 
                 <!-- Gallery Grid -->
                 <div>
 
-                    <!-- Decorative Separator -->
-                    <div class="relative flex items-center justify-center my-16">
-                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
-                        <span class="flex-shrink mx-4">
-                            <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
-                                <path d="M4 0l4 4-4 4-4-4 4-4z"></path>
-                            </svg>
-                        </span>
-                        <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
-                    </div>
-
-                    <!-- Project 1 -->
-                    <div id="project-1" class="scroll-animate">
-                    <div class="relative text-center mb-12">
-                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project One</span>
-                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Residential Clarity Restoration</h3>
-                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
-                    </div>
-                    <div class="max-w-3xl mx-auto mb-12 text-center md:text-left">
-                        <p class="text-lg leading-relaxed">
-                        This project showcases our standard residential window cleaning service. We remove all dirt, grime, and streaks to restore perfect transparency, flooding the home with natural light and providing crystal-clear views.
-                        </p>
-                    </div>
-                    <div class="relative">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                            <div>
-                                <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                                <a href="#" class="view-project-details group relative block" data-project-id="project-1">
-                                    <img src="https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png" alt="Before: Placeholder Image" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
-                                    <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
-                                        <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                                <a href="#" class="view-project-details group relative block" data-project-id="project-1">
-                                    <img src="https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png" alt="After: Placeholder Image" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
-                                    <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
-                                        <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Centered Arrow for Desktop -->
-                        <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-full">
-                            <div class="flex items-center h-full">
-                                <svg class="w-8 h-8 shimmer-text text-transparent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- More projects can be added here following the same structure -->
+                    <!-- Projects will be added here -->
 
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Gallery Data -->
-    <script type="application/json" id="project-1-data">
-    [
-        {"src": "https://i.postimg.cc/pdB7BDP3/Screenshot-2025-09-22-at-10-48-51-am.png", "caption": "Before", "description": "The initial state of the windows, showing buildup of dirt and water spots."},
-        {"src": "https://i.postimg.cc/rpnpPRJY/Screenshot-2025-09-21-at-2-36-22-pm.png", "caption": "After", "description": "The final result: perfectly transparent, streak-free glass that floods the interior with natural light."}
-    ]
-    </script>
-
     <!-- Footer -->
     <footer class="text-center py-8 px-4 border-t border-[#ADA694]/10 mt-auto">
         <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2024 J. Stansfield & Sons. All Rights Reserved.</p>
     </footer>
-
-    <!-- Important Notice Modal -->
-    <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
-        <div class="bg-[#111111] rounded-lg shadow-2xl max-w-2xl w-full p-8 relative transform scale-95 transition-all duration-300 ease-in-out m-4">
-            <button id="notice-modal-close" class="absolute -top-2 -right-2 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-4 text-[#C8AA6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Important Notice Regarding Pet Waste</h2>
-            <p class="text-center text-lg leading-relaxed">
-                For the health and safety of our team, all work areas must be clear of pet waste (e.g., from cats and dogs) prior to our arrival. If the area is not cleared, a clean-up service will be required for an additional charge before any work can commence. This policy ensures a safe environment and prevents the spread of waste by our equipment. We appreciate your understanding.
-            </p>
-        </div>
-    </div>
-
-    <!-- Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
-        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl max-w-6xl w-full h-full flex flex-col relative transform scale-95 transition-all duration-300 ease-in-out m-4">
-            <div id="gallery-view-wrapper" class="h-full flex flex-col">
-                <!-- Image Container (fixed height) -->
-                <div class="relative flex-shrink-0 h-3/5 flex items-center justify-center p-4">
-                    <button id="modal-close" class="absolute top-4 right-4 text-[#C8AA6E] bg-[#111111]/50 rounded-full p-2 hover:bg-[#C8AA6E] hover:text-[#111111] transition-colors z-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-
-                    <!-- Main Image -->
-                    <img id="modal-main-image" src="" alt="Project detail image" class="rounded-lg max-w-full max-h-full object-contain">
-
-                    <!-- Navigation Arrows -->
-                    <button id="modal-prev" class="absolute top-1/2 left-0 md:-left-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button id="modal-next" class="absolute top-1/2 right-0 md:-right-12 -translate-y-1/2 bg-[#C8AA6E]/20 text-[#C8AA6E] p-3 rounded-full hover:bg-[#C8AA6E]/40 transition-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
-
-                <!-- Thumbnail Strip -->
-                <div id="modal-thumbnails-container" class="relative flex-shrink-0 p-4 border-t border-b border-[#ADA694]/20">
-                    <div id="modal-thumbnails" class="flex space-x-3 overflow-x-auto">
-                        <!-- Thumbnails will be injected here by JS -->
-                    </div>
-                    <!-- Downward scroll indicator for text content -->
-                    <div id="text-scroll-indicator" class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[200%] bg-[#111111] p-1 rounded-full">
-                        <svg class="w-6 h-6 text-[#C8AA6E] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                </div>
-
-                <!-- Text Content (scrollable) -->
-                <div class="flex-grow overflow-y-auto p-6 md:p-8">
-                    <div class="max-w-3xl mx-auto">
-                        <div class="flex justify-between items-baseline">
-                            <h3 id="modal-caption" class="text-3xl text-[#C8AA6E] font-bold tracking-wider"></h3>
-                            <p id="modal-counter" class="text-sm text-[#ADA694]/70 tracking-widest"></p>
-                        </div>
-                        <div class="border-t border-[#ADA694]/20 my-4"></div>
-                        <p id="modal-description" class="text-xl text-[#ADA694] leading-loose text-left"></p>
-                        <div id="compare-btn-container" class="text-center mt-8"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="compare-view-wrapper" class="hidden h-full flex flex-col p-4">
-                <div class="flex-grow flex items-center justify-center">
-                    <img-comparison-slider class="rounded-lg shadow-2xl">
-                        <img slot="first" id="compare-img-before" src="" />
-                        <img slot="second" id="compare-img-after" src="" />
-                    </img-comparison-slider>
-                </div>
-                <div class="flex-shrink-0 text-center pt-4">
-                    <button id="back-to-gallery-btn" class="nav-button">Back to Gallery</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bee Logo -->
     <img src="https://i.postimg.cc/W47TxJnc/Golden-Bee-in-Reflection-removebg-preview.png" alt="Golden bee logo" class="bee-logo-img">
@@ -298,204 +98,6 @@
                 });
             }
 
-            // Scroll animation logic
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Optional: stop observing once it's visible
-                    }
-                });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            });
-
-            const elementsToAnimate = document.querySelectorAll('.scroll-animate');
-            elementsToAnimate.forEach(el => {
-                observer.observe(el);
-            });
-
-            // Modal logic
-            const modal = document.getElementById('project-modal');
-            if (modal) {
-                let currentImages = [];
-                let currentIndex = 0;
-
-                const modalClose = document.getElementById('modal-close');
-                const modalMainImage = document.getElementById('modal-main-image');
-                const modalCaption = document.getElementById('modal-caption');
-                const modalCounter = document.getElementById('modal-counter');
-                const modalDescription = document.getElementById('modal-description');
-                const modalPrev = document.getElementById('modal-prev');
-                const modalNext = document.getElementById('modal-next');
-                const modalThumbnails = document.getElementById('modal-thumbnails');
-                const viewProjectLinks = document.querySelectorAll('.view-project-details');
-                const galleryView = document.getElementById('gallery-view-wrapper');
-                const compareView = document.getElementById('compare-view-wrapper');
-                const compareBtnContainer = document.getElementById('compare-btn-container');
-                const compareImgBefore = document.getElementById('compare-img-before');
-                const compareImgAfter = document.getElementById('compare-img-after');
-                const textContentContainer = document.querySelector('#modal-container .flex-grow.overflow-y-auto');
-                const textScrollIndicator = document.getElementById('text-scroll-indicator');
-
-                const showImage = (index) => {
-                    currentIndex = index;
-                    const imageData = currentImages[index];
-
-                    modalMainImage.src = imageData.src;
-                    modalMainImage.alt = imageData.caption;
-                    modalCaption.textContent = imageData.caption;
-                    modalCounter.textContent = `${index + 1} / ${currentImages.length}`;
-
-                    if (imageData.description) {
-                        modalDescription.textContent = imageData.description;
-                        modalDescription.style.display = 'block';
-                    } else {
-                        modalDescription.textContent = '';
-                        modalDescription.style.display = 'none';
-                    }
-                    updateTextScrollIndicator();
-
-                    // Hide nav buttons if only one image
-                    const showNav = currentImages.length > 1;
-                    modalPrev.style.display = showNav ? 'block' : 'none';
-                    modalNext.style.display = showNav ? 'block' : 'none';
-
-                    // Update active thumbnail
-                    const thumbnails = modalThumbnails.querySelectorAll('.thumbnail-img');
-                    thumbnails.forEach((thumb, thumbIndex) => {
-                        if (thumbIndex === index) {
-                            thumb.classList.add('is-active');
-                            // Scroll thumbnail into view
-                            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                        } else {
-                            thumb.classList.remove('is-active');
-                        }
-                    });
-                };
-
-                const updateTextScrollIndicator = () => {
-                    if (!textContentContainer || !textScrollIndicator) return;
-
-                    setTimeout(() => {
-                        const isScrollable = textContentContainer.scrollHeight > textContentContainer.clientHeight;
-                        const isAtTop = textContentContainer.scrollTop < 20;
-
-                        if (isScrollable && isAtTop) {
-                            textScrollIndicator.classList.remove('hidden');
-                        } else {
-                            textScrollIndicator.classList.add('hidden');
-                        }
-                    }, 150); // Small delay to allow rendering
-                };
-
-                const setupCompareButton = (images) => {
-                    compareBtnContainer.innerHTML = '';
-                    if (images.length > 1) { // Show for 2 or more images
-                        const btn = document.createElement('button');
-                        btn.id = 'compare-toggle-btn';
-                        btn.className = 'nav-button';
-                        btn.textContent = 'Compare Before & After';
-                        btn.addEventListener('click', () => {
-                            galleryView.classList.add('hidden');
-                            compareView.classList.remove('hidden');
-                            compareImgBefore.src = images[0].src;
-                            compareImgAfter.src = images[images.length - 1].src;
-                        });
-                        compareBtnContainer.appendChild(btn);
-
-                        const backBtn = document.getElementById('back-to-gallery-btn');
-                        backBtn.addEventListener('click', () => {
-                            galleryView.classList.remove('hidden');
-                            compareView.classList.add('hidden');
-                        });
-                    }
-                };
-
-                const generateThumbnails = (images) => {
-                    modalThumbnails.innerHTML = ''; // Clear existing thumbnails
-                    const container = document.getElementById('modal-thumbnails-container');
-                    if (images.length <= 1) {
-                        container.style.display = 'none';
-                        return;
-                    }
-                    container.style.display = 'block';
-
-                    images.forEach((image, index) => {
-                        const thumb = document.createElement('img');
-                        thumb.src = image.src;
-                        thumb.classList.add('thumbnail-img');
-                        thumb.dataset.index = index;
-                        thumb.addEventListener('click', () => { showImage(index); });
-                        modalThumbnails.appendChild(thumb);
-                    });
-                };
-
-                viewProjectLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const projectId = link.dataset.projectId;
-                        const dataScript = document.getElementById(`${projectId}-data`);
-
-                        if (dataScript) {
-                            const imagesDataString = dataScript.textContent;
-                            if (imagesDataString) {
-                                currentImages = JSON.parse(imagesDataString);
-                                generateThumbnails(currentImages);
-                                setupCompareButton(currentImages);
-                                showImage(0);
-                                modal.classList.add('is-active');
-                                document.documentElement.classList.add('modal-is-open');
-                                textContentContainer.addEventListener('scroll', updateTextScrollIndicator);
-                            }
-                        }
-                    });
-                });
-
-                const closeModal = () => {
-                    modal.classList.remove('is-active');
-                    document.documentElement.classList.remove('modal-is-open');
-                    textContentContainer.removeEventListener('scroll', updateTextScrollIndicator);
-                };
-
-                modalPrev.addEventListener('click', () => {
-                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentImages.length - 1;
-                    showImage(currentIndex);
-                });
-                modalNext.addEventListener('click', () => {
-                    currentIndex = (currentIndex < currentImages.length - 1) ? currentIndex + 1 : 0;
-                    showImage(currentIndex);
-                });
-
-                modalClose.addEventListener('click', closeModal);
-                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-                document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
-            }
-
-            // Notice Modal Logic
-            const noticeModal = document.getElementById('notice-modal');
-            if (noticeModal) {
-                const openNoticeButton = document.getElementById('open-notice-modal');
-                const closeNoticeButton = document.getElementById('notice-modal-close');
-
-                const openNoticeModal = () => {
-                    noticeModal.classList.add('is-active');
-                    document.documentElement.classList.add('modal-is-open');
-                };
-
-                const closeNoticeModal = () => {
-                    noticeModal.classList.remove('is-active');
-                    document.documentElement.classList.remove('modal-is-open');
-                };
-
-                openNoticeButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openNoticeModal();
-                });
-
-                closeNoticeButton.addEventListener('click', closeNoticeModal);
-                noticeModal.addEventListener('click', (e) => { if (e.target === noticeModal) closeNoticeModal(); });
-            }
         });
     </script>
 </body>
