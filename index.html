@@ -37,9 +37,6 @@
                 <span class="logo-text logo-invisible">J. Stansfield & Sons</span>
             </a>
         </div>
-        <nav class="hidden md:flex space-x-8 items-center">
-            <a href="#contact" class="nav-link hover:text-[#C8AA6E] transition-colors duration-300">Contact</a>
-        </nav>
         <button id="mobile-menu-button" class="md:hidden text-[#C8AA6E] focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
@@ -50,7 +47,6 @@
         <button id="close-mobile-menu" class="absolute top-6 right-6 text-[#C8AA6E] focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <a href="#contact" class="text-4xl text-[#C8AA6E] hover:text-white transition-colors duration-300 tracking-wider">Contact</a>
     </div>
 
     <!-- Main Content Container -->
@@ -73,8 +69,11 @@
             <!-- About Us Section -->
             <section id="about" class="scroll-animate w-full px-4 pt-20 pb-10 flex flex-col items-center text-center">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6 text-[#C8AA6E]">About Us</h2>
+                <p class="text-xl lg:text-2xl font-medium italic text-[#C8AA6E] tracking-wider max-w-3xl mx-auto mb-8">
+                    "We are not the most expensive, nor are we the cheapest—we are fair."
+                </p>
                 <p class="text-lg lg:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
-                    We pride ourselves on delivering exceptional quality across a range of bespoke property services. We are not the most expensive, nor are we the cheapest—we are fair. Explore our offerings below to learn more about how we can assist you.
+                    We take pride in offering professional, high-quality property services with complete transparency. Explore our work below to see how we can help keep your home looking its best.
                 </p>
             </section>
 
@@ -82,7 +81,7 @@
             <section id="our-services" class="scroll-animate w-full px-4 pt-20 pb-20 flex flex-col items-center text-center">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-16 text-[#C8AA6E]">Our Services</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full items-start">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-start justify-center">
                     <!-- Service Cards -->
                     <a href="aqua-blast.html" class="block transition-transform duration-300 hover:-translate-y-1">
                         <div class="service-card h-full">
@@ -90,6 +89,7 @@
                                 <img src="https://i.postimg.cc/9FQBfVPj/Generated-Image-September-21-2025-8-34-AM-removebg-preview.png" alt="Aqua Blast logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">Aqua Blast</h3>
                             </div>
+                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Revive your driveway, patio, and paths.</p>
                             <img src="https://i.postimg.cc/j5vDZdnQ/Aqua-Blast.jpg" alt="High-pressure cleaning a stone patio" class="service-card-img mt-4">
                         </div>
                     </a>
@@ -99,6 +99,7 @@
                                 <img src="https://i.postimg.cc/0Q8qMb2f/Generated-Image-September-21-2025-7-26-AM-removebg-preview.png" alt="Prestige Lawncare logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">Prestige Lawncare</h3>
                             </div>
+                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">From regular mows to full restorations.</p>
                             <img src="https://i.postimg.cc/xCSJ0YvK/IMG-0684.jpg" alt="Perfectly striped green lawn" class="service-card-img mt-4 object-top">
                         </div>
                     </a>
@@ -108,6 +109,7 @@
                                 <img src="https://i.postimg.cc/pTwfqkPZ/Generated-Image-September-21-2025-12-22-PM-removebg-preview.png" alt="Omega Window Cleaning logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">Omega Window Cleaning</h3>
                             </div>
+                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Crystal clear views, inside and out.</p>
                             <img src="https://i.postimg.cc/pVS9TDJW/istockphoto-504403109-612x612.jpg" alt="Spotless window reflecting a clear blue sky" class="service-card-img mt-4">
                         </div>
                     </a>
@@ -117,77 +119,23 @@
                                 <img src="https://i.postimg.cc/KjtxPZNJ/Generated-Image-September-21-2025-3-22-AM-removebg-preview.png" alt="Gutter Suckers logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">Gutter Suckers</h3>
                             </div>
+                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Safer, ground-based cleaning to protect your home.</p>
                             <img src="https://i.postimg.cc/wTd1L9ZZ/Gutter-Vac-600x600.jpg" alt="Gutter cleaning with a powerful vacuum" class="service-card-img mt-4 object-top">
                         </div>
                     </a>
-                    <!-- Centered wrapper for the last card -->
-                    <div class="md:col-span-2 lg:col-start-2 lg:col-span-2 flex justify-center">
-                        <a href="the-fence-painter.html" class="block transition-transform duration-300 hover:-translate-y-1 w-full lg:w-1/2">
-                            <div class="service-card h-full">
-                                <div class="flex items-center justify-center gap-x-3 mb-2">
-                                    <img src="https://i.postimg.cc/DZ10K39t/Generated-Image-September-21-2025-1-56-PM-removebg-preview.png" alt="The Fence Painter logo" class="h-8 w-auto">
-                                    <h3 class="text-2xl font-medium text-[#C8AA6E]">The Fence Painter</h3>
-                                </div>
-                                <img src="https://i.postimg.cc/kXP7Q8Pv/Generated-Image-September-21-2025-1-05-PM.png" alt="A freshly painted dark grey fence" class="service-card-img mt-4">
+                    <a href="the-fence-painter.html" class="block transition-transform duration-300 hover:-translate-y-1 lg:col-start-2">
+                        <div class="service-card h-full">
+                            <div class="flex items-center justify-center gap-x-3 mb-2">
+                                <img src="https://i.postimg.cc/DZ10K39t/Generated-Image-September-21-2025-1-56-PM-removebg-preview.png" alt="The Fence Painter logo" class="h-8 w-auto">
+                                <h3 class="text-2xl font-medium text-[#C8AA6E]">The Fence Painter</h3>
                             </div>
-                        </a>
-                    </div>
+                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Protect and beautify your fencing.</p>
+                            <img src="https://i.postimg.cc/kXP7Q8Pv/Generated-Image-September-21-2025-1-05-PM.png" alt="A freshly painted dark grey fence" class="service-card-img mt-4">
+                        </div>
+                    </a>
                 </div>
             </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="scroll-animate w-full px-4 pt-20 pb-32 flex flex-col items-center text-center">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6 text-[#C8AA6E]">Start Your Project</h2>
-                <p class="text-lg max-w-3xl mx-auto mb-16">
-                    To begin, please select the service you are interested in.
-                </p>
-
-                <!-- Service Selection Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 w-full max-w-5xl mb-24">
-                    <a href="#contact-form" class="service-selector" data-service="Aqua Blast">
-                        <img src="https://i.postimg.cc/9FQBfVPj/Generated-Image-September-21-2025-8-34-AM-removebg-preview.png" alt="Aqua Blast logo" class="h-16 mx-auto mb-3">
-                        <span class="text-lg font-medium text-[#ADA694]">Aqua Blast</span>
-                    </a>
-                    <a href="#contact-form" class="service-selector" data-service="Prestige Lawncare">
-                        <img src="https://i.postimg.cc/0Q8qMb2f/Generated-Image-September-21-2025-7-26-AM-removebg-preview.png" alt="Prestige Lawncare logo" class="h-16 mx-auto mb-3">
-                        <span class="text-lg font-medium text-[#ADA694]">Prestige Lawncare</span>
-                    </a>
-                    <a href="#contact-form" class="service-selector" data-service="Omega Window Cleaning">
-                        <img src="https://i.postimg.cc/pTwfqkPZ/Generated-Image-September-21-2025-12-22-PM-removebg-preview.png" alt="Omega Window Cleaning logo" class="h-16 mx-auto mb-3">
-                        <span class="text-lg font-medium text-[#ADA694]">Omega Window Cleaning</span>
-                    </a>
-                    <a href="#contact-form" class="service-selector" data-service="Gutter Suckers">
-                        <img src="https://i.postimg.cc/KjtxPZNJ/Generated-Image-September-21-2025-3-22-AM-removebg-preview.png" alt="Gutter Suckers logo" class="h-16 mx-auto mb-3">
-                        <span class="text-lg font-medium text-[#ADA694]">Gutter Suckers</span>
-                    </a>
-                    <a href="#contact-form" class="service-selector col-span-2 md:col-span-1 lg:col-span-1" data-service="The Fence Painter">
-                        <img src="https://i.postimg.cc/DZ10K39t/Generated-Image-September-21-2025-1-56-PM-removebg-preview.png" alt="The Fence Painter logo" class="h-16 mx-auto mb-3">
-                        <span class="text-lg font-medium text-[#ADA694]">The Fence Painter</span>
-                    </a>
-                </div>
-
-                <form id="contact-form" class="w-full max-w-2xl">
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                            <label class="hidden" for="grid-first-name">Name</label>
-                            <input class="form-input" id="grid-first-name" type="text" placeholder="Name">
-                        </div>
-                        <div class="w-full md:w-1/2 px-3">
-                            <label class="hidden" for="grid-email">Email</label>
-                            <input class="form-input" id="grid-email" type="email" placeholder="Email Address">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3">
-                            <label class="hidden" for="grid-message">Message</label>
-                            <textarea class="form-input" id="grid-message" placeholder="Please select a service above to begin..."></textarea>
-                        </div>
-                    </div>
-                    <button class="submit-button" type="button">
-                        Send Message
-                    </button>
-                </form>
-            </section>
         </div>
     </main>
 

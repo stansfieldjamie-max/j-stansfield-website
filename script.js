@@ -46,26 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.scroll-animate');
     elementsToAnimate.forEach(el => observer.observe(el));
 
-    // Service selector logic
-    const serviceSelectors = document.querySelectorAll('.service-selector');
-    const messageTextarea = document.getElementById('grid-message');
-    const contactForm = document.getElementById('contact-form');
-
-    if (serviceSelectors.length > 0 && messageTextarea && contactForm) {
-        serviceSelectors.forEach(selector => {
-            selector.addEventListener('click', (e) => {
-                e.preventDefault();
-                const serviceName = selector.dataset.service;
-                
-                messageTextarea.placeholder = `I'm interested in a project for ${serviceName}. Please provide some details...`;
-                messageTextarea.focus();
-
-                // Smooth scroll to the form
-                contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-        });
-    }
-
     // Homepage hero bee animation logic
     const body = document.body;
     const heroSection = document.getElementById('homepage');
