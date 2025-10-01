@@ -17,58 +17,13 @@
     <script src="https://unpkg.com/img-comparison-slider@8/dist/index.js" defer></script>
 
     <style>
-        /* Allow scrolling on this page */
-        body {
-            overflow-y: scroll;
-        }
-        html.modal-is-open {
-            overflow: hidden;
-        }
-        /* Styles for scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #project-modal.is-active {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #project-modal.is-active #modal-container {
-            transform: scale(1);
-        }
-        #notice-modal.is-active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #notice-modal.is-active > div {
-            transform: scale(1);
-        }
-        /* Thumbnail styles */
-        .thumbnail-img {
-            height: 72px;
-            width: auto;
-            border-radius: 4px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-        .thumbnail-img:hover {
-            border-color: #ADA694;
-        }
-        .thumbnail-img.is-active {
-            border-color: #C8AA6E;
-        }
         /* Hide scrollbar for thumbnails but allow scrolling */
         #modal-thumbnails {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
         }
         #modal-thumbnails::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+
         /* Custom styles for the image comparison slider */
         img-comparison-slider {
             --divider-width: 1px;
@@ -103,7 +58,7 @@
                         <span>Back to Prestige Lawncare</span>
                     </a>
 
-                    <img src="https://i.postimg.cc/0Q8qMb2f/Generated-Image-September-21-2025-7-26-AM-removebg-preview.png" alt="Prestige Lawncare Brand Logo" class="w-20 md:w-28 h-auto mx-auto mb-4">
+                    <img src="assets/images/logos/prestige-lawncare-logo.png" alt="Prestige Lawncare Brand Logo" class="w-20 md:w-28 h-auto mx-auto mb-4">
                     <h1 class="shimmer-text text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center pb-2"> 
                         Our Work: Transformations
                     </h1>
@@ -150,17 +105,26 @@
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Fine Turf Restoration</h3>
                         <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
-                    <div class="max-w-3xl mx-auto mb-12 text-center md:text-left">
-                        <p class="text-lg leading-relaxed">
-                        This represents the pinnacle of lawn care, beginning with a multi-stage restoration. Maintaining its flawless, carpet-like finish requires a year-round, intensive program of expert mowing, strategic watering, bi-weekly fertilisation, proactive disease control, periodic verticutting, light seasonal renovations, and specialised winter care.
-                        </p>
+                    <div class="max-w-3xl mx-auto mb-12 text-center md:text-left text-lg leading-relaxed">
+                        <p class="mb-4">This represents the most prideful outcome of lawn care, beginning with a multi-stage restoration. Maintaining the carpet-like finish requires a year-round, intensive programme including:</p>
+                        <ul class="list-disc list-inside space-y-2 text-left pl-4">
+                            <li>Consistent mowing every 2-3 days to encourage turf density</li>
+                            <li>Strategic watering & bi-weekly fertilisation</li>
+                            <li>Proactive disease control</li>
+                            <li>Verticutting when required, light seasonal renovations, and specialised year-round care</li>
+                        </ul>
                     </div>
                     <div class="relative">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                             <div>
                                 <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
                                 <a href="#" class="view-project-details group relative block" data-project-id="project-1">
-                                    <img src="assets/images/prestige-lawncare/project-1/before.jpg" alt="Before: Overgrown garden path" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                    <img src="assets/images/prestige-lawncare/project-1/before.jpg" alt="Before: Overgrown garden path" class="w-full transition-all duration-300 ease-in-out rounded-lg filter grayscale group-hover:filter-none group-hover:scale-105">
+                                    <!-- "Future Offering" overlay - visible by default, hides on hover -->
+                                    <div class="absolute inset-0 bg-black/75 flex items-center justify-center z-10 rounded-lg opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                                        <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded text-center">Future Offering</span>
+                                    </div>
+                                    <!-- "View Project" overlay - hidden by default, shows on hover -->
                                     <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
                                         <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
@@ -170,18 +134,17 @@
                             <div>
                                 <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
                                 <a href="#" class="view-project-details group relative block" data-project-id="project-1">
-                                    <img src="assets/images/prestige-lawncare/project-1/after.jpg" alt="After: Cleared and defined garden path" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                    <img src="assets/images/prestige-lawncare/project-1/after.jpg" alt="After: Cleared and defined garden path" class="w-full transition-all duration-300 ease-in-out rounded-lg filter grayscale group-hover:filter-none group-hover:scale-105">
+                                    <!-- "Future Offering" overlay - visible by default, hides on hover -->
+                                    <div class="absolute inset-0 bg-black/75 flex items-center justify-center z-10 rounded-lg opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                                        <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded text-center">Future Offering</span>
+                                    </div>
+                                    <!-- "View Project" overlay - hidden by default, shows on hover -->
                                     <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
                                         <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
-                        <!-- Centered Arrow for Desktop -->
-                        <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-full">
-                            <div class="flex items-center h-full">
-                                <svg class="w-8 h-8 shimmer-text text-transparent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                             </div>
                         </div>
                     </div>
@@ -205,8 +168,8 @@
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Intensive Lawn Reset</h3>
                         <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
-                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
-                        This severely overgrown lawn was brought back from waist-high neglect to a manageable state, establishing a foundation for future health. To suit your needs, all green waste can be prepared for the local council's collection, or we can remove it for recycling for an additional charge.
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12 leading-relaxed">
+                        This service performs an intensive reset on severely overgrown lawns. We bring the grass back from waist-high neglect to a manageable state, establishing a healthy foundation for future care. We can prepare all green waste for council collection or handle the removal for you.
                     </p>
                     <div class="relative">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -221,12 +184,6 @@
                                 <a href="#" class="view-project-details group relative block" data-project-id="project-2">
                                     <img src="assets/images/prestige-lawncare/project-2/after.png" alt="After: Pristine, striped lawn" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
                                 </a>
-                            </div>
-                        </div>
-                        <!-- Centered Arrow for Desktop -->
-                        <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-full">
-                            <div class="flex items-center h-full">
-                                <svg class="w-8 h-8 shimmer-text text-transparent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                             </div>
                         </div>
                     </div>
@@ -268,12 +225,6 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- Centered Arrow for Desktop -->
-                        <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-full">
-                            <div class="flex items-center h-full">
-                                <svg class="w-8 h-8 shimmer-text text-transparent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-                            </div>
-                        </div>
                     </div>
                     </div>
 
@@ -296,9 +247,7 @@
                         <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
                     <div class="max-w-3xl mx-auto mb-12 text-center md:text-left">
-                        <p class="text-lg leading-relaxed">
-                        This flexible monthly service provides a standard-quality mow for consistent upkeep. To prepare the area, clients can tidy beforehand or opt for our pre-mow clearing service for an additional charge. Regarding waste disposal, all debris can be prepared for local council collection or removed by us for recycling at an additional charge.
-                        </p>
+                        <p class="text-lg leading-relaxed">This flexible monthly service provides a standard-quality mow for consistent upkeep. To prepare the area, clients can tidy beforehand or opt for our pre-mow clearing service for an additional charge. Regarding waste disposal, all debris can be prepared for local council collection or removed by us for recycling at an additional charge.</p>
                     </div>
                     <div class="relative">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -366,12 +315,6 @@
                                 <a href="#" class="view-project-details group relative block" data-project-id="project-5">
                                     <img src="assets/images/prestige-lawncare/project-5/after.jpg" alt="After: Neatly mowed lawn" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
                                 </a>
-                            </div>
-                        </div>
-                        <!-- Centered Arrow for Desktop -->
-                        <div class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-full">
-                            <div class="flex items-center h-full">
-                                <svg class="w-8 h-8 shimmer-text text-transparent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                             </div>
                         </div>
                     </div>
@@ -482,8 +425,8 @@
     </footer>
 
     <!-- Important Notice Modal -->
-    <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
-        <div class="bg-[#111111] rounded-lg shadow-2xl max-w-2xl w-full p-8 relative transform scale-95 transition-all duration-300 ease-in-out m-4">
+    <div id="notice-modal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
+        <div class="modal-container bg-[#111111] rounded-lg shadow-2xl max-w-2xl w-full p-8 relative m-4">
             <button id="notice-modal-close" class="absolute -top-2 -right-2 text-white bg-[#C8AA6E] rounded-full p-2 hover:bg-white hover:text-[#C8AA6E] transition-colors z-10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -492,16 +435,16 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-4 text-[#C8AA6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">Important Notice Regarding Pet Waste</h2>
+            <h2 class="text-2xl font-medium text-center mb-4 text-[#C8AA6E]">A Quick Note on Site Preparation</h2>
             <p class="text-center text-lg leading-relaxed">
-                For the health and safety of our team, all work areas must be clear of pet waste (e.g., from cats and dogs) prior to our arrival. If the area is not cleared, a clean-up service will be required for an additional charge before any work can commence. This policy ensures a safe environment and prevents the spread of waste by our equipment. We appreciate your understanding.
+                For the health and safety of our team, we kindly request that all work areas are clear of pet waste before our arrival. This ensures a safe environment and prevents the spread of waste by our equipment. If the area is not cleared, a clean-up service will be required for an additional charge before work can begin. We appreciate your understanding.
             </p>
         </div>
     </div>
 
     <!-- Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
-        <div id="modal-container" class="bg-[#111111] rounded-lg shadow-2xl max-w-6xl w-full h-full flex flex-col relative transform scale-95 transition-all duration-300 ease-in-out m-4">
+    <div id="project-modal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
+        <div id="modal-container" class="modal-container bg-[#111111] rounded-lg shadow-2xl max-w-6xl w-full h-full flex flex-col relative m-4">
             <div id="gallery-view-wrapper" class="h-full flex flex-col">
                 <!-- Image Container (fixed height) -->
                 <div class="relative flex-shrink-0 h-3/5 flex items-center justify-center p-4">
@@ -565,37 +508,10 @@
     <!-- Bee Logo -->
     <img src="assets/images/bee-logo.png" alt="Golden bee logo" class="bee-logo-img">
 
+    <script src="script.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Header scroll effect
-            const header = document.querySelector('header');
-            if (header) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) { // Add class after scrolling 50px
-                        header.classList.add('header-scrolled');
-                    } else {
-                        header.classList.remove('header-scrolled');
-                    }
-                });
-            }
-
-            // Scroll animation logic
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Optional: stop observing once it's visible
-                    }
-                });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            });
-
-            const elementsToAnimate = document.querySelectorAll('.scroll-animate');
-            elementsToAnimate.forEach(el => {
-                observer.observe(el);
-            });
-
             // Modal logic
             const modal = document.getElementById('project-modal');
             if (modal) {

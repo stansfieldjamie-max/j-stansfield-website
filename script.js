@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('homepage');
 
     if (body.classList.contains('is-homepage') && heroSection) {
-        const heroHeight = heroSection.offsetHeight;
-
         window.addEventListener('scroll', () => {
+            const heroHeight = heroSection.offsetHeight;
+            const logo = document.querySelector('.logo-text');
             // Add class when user has scrolled 70% of the way down the hero section
             if (window.scrollY > heroHeight * 0.7) {
                 body.classList.add('scrolled-past-hero');

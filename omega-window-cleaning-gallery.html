@@ -16,11 +16,6 @@
     <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@8/dist/styles.css" />
     <script src="https://unpkg.com/img-comparison-slider@8/dist/index.js" defer></script>
 
-    <style>
-        body {
-            overflow-y: scroll;
-        }
-    </style>
 </head>
 <body class="antialiased">
     <!-- Header/Navigation -->
@@ -46,7 +41,7 @@
                         <span>Back to Omega Window Cleaning</span>
                     </a>
 
-                    <img src="https://i.postimg.cc/pTwfqkPZ/Generated-Image-September-21-2025-12-22-PM-removebg-preview.png" alt="Omega Window Cleaning Brand Logo" class="w-20 md:w-28 h-auto mx-auto mb-4">
+                    <img src="assets/images/logos/omega-window-cleaning-logo.png" alt="Omega Window Cleaning Brand Logo" class="w-20 md:w-28 h-auto mx-auto mb-4">
                     <h1 class="shimmer-text text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center pb-2">
                         Our Work: Transformations
                     </h1>
@@ -82,23 +77,8 @@
     </footer>
 
     <!-- Bee Logo -->
-    <img src="https://i.postimg.cc/W47TxJnc/Golden-Bee-in-Reflection-removebg-preview.png" alt="Golden bee logo" class="bee-logo-img">
+    <img src="assets/images/bee-logo.png" alt="Golden bee logo" class="bee-logo-img">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Header scroll effect
-            const header = document.querySelector('header');
-            if (header) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) { // Add class after scrolling 50px
-                        header.classList.add('header-scrolled');
-                    } else {
-                        header.classList.remove('header-scrolled');
-                    }
-                });
-            }
-
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

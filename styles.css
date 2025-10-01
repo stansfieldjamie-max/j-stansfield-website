@@ -6,8 +6,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    position: relative; /* Allows for absolute positioning of child elements */
-    overflow-y: hidden; /* This prevents vertical scrolling by default */
+    position: relative;
+    /* Allow vertical scrolling by default on all pages. JS will handle locking it for modals. */
+    overflow-y: scroll;
 }
 
 header {
@@ -24,27 +25,26 @@ header.header-scrolled {
 }
 
 .logo-text {
-    opacity: 1; /* Visible by default on all pages */
-    /* Fine-tuning the size and spacing for a more intentional, high-end look */
-    font-size: 0.875rem; /* Increased size for better visibility */
-    letter-spacing: 0.3em; /* Reduced spacing to bring letters closer */
-    color: #ADA694; /* Starting color to match nav links */
-    font-weight: 300; /* Lighter font weight for elegance */
+    opacity: 1;
+    font-size: 0.875rem;
+    letter-spacing: 0.3em;
+    color: #ADA694;
+    font-weight: 300;
     transition: all 0.3s ease-in-out;
 }
 
-/* The new hover effect: slightly brighter color and a tiny scale transform */
 .logo-text:hover {
     color: #C8AA6E;
-}
-
-header.header-scrolled .logo-invisible {
-    opacity: 1; /* Make the logo visible on scroll */
 }
 
 /* On the homepage specifically, start the logo as invisible */
 .is-homepage .logo-text {
     opacity: 0;
+}
+
+/* On the homepage specifically, make the logo visible once scrolled */
+.is-homepage.scrolled-past-hero .logo-text {
+    opacity: 1;
 }
 
 .shimmer-text {
@@ -261,3 +261,53 @@ textarea.form-input {
     background-color: #050505;
     color: #C8AA6E;
 }
+
+/* Global styles for scroll animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Modal Styles === */
+
+/* Lock the main page scroll when a modal is open */
+html.modal-is-open {
+    overflow: hidden;
+}
+
+/* Base styles for a full-screen modal overlay */
+.modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+.modal-overlay.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Base styles for the modal container itself */
+.modal-container {
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+}
+.modal-overlay.is-active .modal-container {
+    transform: scale(1);
+}
+
+/* Gallery Thumbnail styles */
+.thumbnail-img {
+    height: 72px;
+    width: auto;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+.thumbnail-img:hover { border-color: #ADA694; }
+.thumbnail-img.is-active { border-color: #C8AA6E; }

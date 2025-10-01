@@ -12,29 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles for scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Allow scrolling on this page */
-        body {
-            overflow-y: scroll;
-        }
-    </style>
 </head>
 <body class="antialiased is-homepage">
     <!-- Header/Navigation -->
     <header class="p-6 md:p-8 flex justify-between items-center z-50">
         <div class="logo-container">
             <a href="index.html">
-                <span class="logo-text logo-invisible">J. Stansfield & Sons</span>
+                <span class="logo-text">J. Stansfield & Sons</span>
             </a>
         </div>
         <button id="mobile-menu-button" class="md:hidden text-[#C8AA6E] focus:outline-none">
@@ -83,14 +67,17 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-start justify-center">
                     <!-- Service Cards -->
-                    <a href="aqua-blast.html" class="block transition-transform duration-300 hover:-translate-y-1">
-                        <div class="service-card h-full">
+                    <a href="aqua-blast.html" class="block"> <!-- Aqua Blast - Limited -->
+                        <div class="service-card h-full relative">
+                            <div class="absolute inset-0 bg-black/75 flex items-center justify-center z-10 rounded-lg">
+                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Limited Availability</span>
+                            </div>
                             <div class="flex items-center justify-center gap-x-3 mb-2">
                                 <img src="assets/images/logos/aqua-blast-logo.png" alt="Aqua Blast logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">Aqua Blast</h3>
                             </div>
                             <p class="text-sm text-center text-[#ADA694]/80 mt-2">Revive your driveway, patio, and paths.</p>
-                            <img src="assets/images/services/aqua-blast-card.jpg" alt="High-pressure cleaning a stone patio" class="service-card-img mt-4">
+                            <img src="assets/images/services/aqua-blast-card.jpg" alt="High-pressure cleaning a stone patio" class="service-card-img mt-4 filter grayscale">
                         </div>
                     </a>
                     <a href="prestige-lawncare.html" class="block transition-transform duration-300 hover:-translate-y-1">
@@ -113,24 +100,30 @@
                             <img src="assets/images/services/omega-window-cleaning-card.jpg" alt="Spotless window reflecting a clear blue sky" class="service-card-img mt-4">
                         </div>
                     </a>
-                    <a href="gutter-suckers.html" class="block transition-transform duration-300 hover:-translate-y-1">
-                        <div class="service-card h-full">
+                    <a href="gutter-suckers.html" class="block"> <!-- Gutter Suckers - Limited -->
+                        <div class="service-card h-full relative">
+                            <div class="absolute inset-0 bg-black/75 flex items-center justify-center z-10 rounded-lg">
+                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Limited Availability</span>
+                            </div>
                             <div class="flex items-center justify-center gap-x-3 mb-2">
                                 <img src="assets/images/logos/gutter-suckers-logo.png" alt="Gutter Suckers logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">Gutter Suckers</h3>
                             </div>
                             <p class="text-sm text-center text-[#ADA694]/80 mt-2">Safer, ground-based cleaning to protect your home.</p>
-                            <img src="assets/images/services/gutter-suckers-card.jpg" alt="Gutter cleaning with a powerful vacuum" class="service-card-img mt-4 object-top">
+                            <img src="assets/images/services/gutter-suckers-card.jpg" alt="Gutter cleaning with a powerful vacuum" class="service-card-img mt-4 object-top filter grayscale">
                         </div>
                     </a>
-                    <a href="the-fence-painter.html" class="block transition-transform duration-300 hover:-translate-y-1 lg:col-start-2">
-                        <div class="service-card h-full">
+                    <a href="the-fence-painter.html" class="block lg:col-start-2"> <!-- The Fence Painter - Limited -->
+                        <div class="service-card h-full relative">
+                            <div class="absolute inset-0 bg-black/75 flex items-center justify-center z-10 rounded-lg">
+                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Limited Availability</span>
+                            </div>
                             <div class="flex items-center justify-center gap-x-3 mb-2">
                                 <img src="assets/images/logos/the-fence-painter-logo.png" alt="The Fence Painter logo" class="h-8 w-auto">
                                 <h3 class="text-2xl font-medium text-[#C8AA6E]">The Fence Painter</h3>
                             </div>
                             <p class="text-sm text-center text-[#ADA694]/80 mt-2">Protect and beautify your fencing.</p>
-                            <img src="assets/images/services/the-fence-painter-card.png" alt="A freshly painted dark grey fence" class="service-card-img mt-4">
+                            <img src="assets/images/services/the-fence-painter-card.png" alt="A freshly painted dark grey fence" class="service-card-img mt-4 filter grayscale">
                         </div>
                     </a>
                 </div>

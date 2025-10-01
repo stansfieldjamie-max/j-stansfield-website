@@ -13,17 +13,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<style>
-    body {
-        overflow-y: scroll;
-    }
-</style>
 <body class="antialiased">
     <!-- Header/Navigation -->
     <header class="p-6 md:p-8 flex justify-between items-center z-50">
         <div class="logo-container">
             <a href="index.html">
-                <span class="logo-text logo-invisible">J. Stansfield & Sons</span>
+                <span class="logo-text">J. Stansfield & Sons</span>
             </a>
         </div>
     </header>
@@ -43,18 +38,16 @@
                     </a>
                 </div>
                 <!-- Flex container for logo and title -->
-                <div class="flex justify-between items-center">
-                    <img src="https://i.postimg.cc/pTwfqkPZ/Generated-Image-September-21-2025-12-22-PM-removebg-preview.png" alt="Omega Window Cleaning Brand Logo" class="w-32 md:w-40 h-auto">
+                <div class="flex justify-center items-center gap-x-8 md:gap-x-12">
+                    <img src="assets/images/logos/omega-window-cleaning-logo.png" alt="Omega Window Cleaning Brand Logo" class="w-32 md:w-40 h-auto">
                     <h1 class="shimmer-text text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-center pb-2">
                         Omega Window Cleaning
                     </h1>
-                    <!-- Ghost element for centering -->
-                    <div class="w-32 md:w-40"></div>
                 </div>
 
                 <!-- Main Service Description -->
                 <p class="mt-12 text-lg lg:text-xl font-normal leading-relaxed max-w-3xl mx-auto text-center">
-                    Omega Window Cleaning delivers more than just a streak-free shine. We provide a complete rejuvenation for your windows, ensuring crystal clear views and flawless function by meticulously cleaning glass, frames, and servicing all hardware.
+                    Our Omega service is more than just a standard window clean. We provide a complete service for your windows, ensuring crystal clear glass and smooth operation by thoroughly cleaning the frames and servicing all the moving parts.
                 </p>
 
                 <!-- Service Description -->
@@ -104,6 +97,33 @@
                     </div>
                 </div>
 
+                <!-- Subscription Package -->
+                <div class="mt-24 text-lg lg:text-xl font-normal leading-relaxed max-w-4xl mx-auto text-center">
+                    <div class="border border-[#C8AA6E] rounded-lg p-8 relative transition-all duration-300 hover:shadow-xl hover:shadow-[#C8AA6E]/10">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C8AA6E] text-[#050505] text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">Our Best Value</span>
+                        <h3 class="text-2xl font-medium text-center text-[#C8AA6E] mb-4 tracking-widest">The Clarity Subscription</h3>
+                        <p class="text-[#ADA694] mb-8">Enjoy clean windows year-round and save money. This is our most popular choice for homeowners who value consistent quality without the hassle.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left text-base">
+                            <div class="flex items-start space-x-3">
+                                <svg class="h-6 w-6 text-[#C8AA6E] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span><strong>Quarterly Service:</strong> A full exterior clean every three months to maintain a perfect shine.</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="h-6 w-6 text-[#C8AA6E] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span><strong>Save 15%:</strong> Enjoy a 15% discount on every clean compared to one-off bookings.</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="h-6 w-6 text-[#C8AA6E] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span><strong>Priority Scheduling:</strong> Subscription members get first choice of dates each season.</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="h-6 w-6 text-[#C8AA6E] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span><strong>Set & Forget Peace of Mind:</strong> We manage the schedule so you don't have to.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Optional Add-On -->
                 <div class="mt-24">
                     <h3 class="text-2xl font-medium text-center text-[#C8AA6E] mb-8 tracking-widest">Complete the Transformation</h3>
@@ -116,7 +136,7 @@
                                 <li><strong>Hardware Maintenance:</strong> Lubrication of all moving parts, including hinges and handle mechanisms.</li>
                             </ul>
                         </div>
-                        <img src="https://i.postimg.cc/P50jCjVv/dark-grey-front-door.jpg" alt="A clean and welcoming dark grey front entrance door" class="rounded-lg w-full h-full object-cover max-h-64 md:max-h-none">
+                        <img src="assets/images/services/door-rejuvenation.jpg" alt="A clean and welcoming dark grey front entrance door" class="rounded-lg w-full h-full object-cover max-h-64 md:max-h-none">
                     </div>
                 </div>
 
@@ -134,7 +154,7 @@
     </footer>
 
     <!-- Bee Logo -->
-    <img src="https://i.postimg.cc/W47TxJnc/Golden-Bee-in-Reflection-removebg-preview.png" alt="Golden bee logo" class="bee-logo-img">
+    <img src="assets/images/bee-logo.png" alt="Golden bee logo" class="bee-logo-img">
 
     <script src="script.js"></script>
 
