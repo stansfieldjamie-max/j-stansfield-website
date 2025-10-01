@@ -16,23 +16,6 @@
     <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@8/dist/styles.css" />
     <script src="https://unpkg.com/img-comparison-slider@8/dist/index.js" defer></script>
 
-    <style>
-        /* Hide scrollbar for thumbnails but allow scrolling */
-        #modal-thumbnails {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-        #modal-thumbnails::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
-
-        /* Custom styles for the image comparison slider */
-        img-comparison-slider {
-            --divider-width: 1px;
-            --divider-color: #C8AA6E;
-            --handle-size: 30px;
-            --handle-color: #C8AA6E;
-            max-height: 65%;
-        }
-    </style>
 </head>
 <body class="antialiased">
     <!-- Header/Navigation -->
@@ -99,7 +82,7 @@
                     </div>
 
                     <!-- Project 1 (New) -->
-                    <div id="project-1" class="scroll-animate">
+                    <div class="scroll-animate">
                     <div class="relative text-center mb-12">
                         <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project One</span>
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Fine Turf Restoration</h3>
@@ -151,7 +134,7 @@
                     </div>
 
                     <!-- Decorative Separator -->
-                    <div class="relative flex items-center justify-center my-16">
+                    <div class="relative flex items-center justify-center my-24">
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                         <span class="flex-shrink mx-4">
                             <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
@@ -161,15 +144,15 @@
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                     </div>
 
-                    <!-- Project 2 (was 1) -->
+                    <!-- Project 2 -->
                     <div class="scroll-animate">
                     <div class="relative text-center mb-12">
                         <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Two</span>
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Intensive Lawn Reset</h3>
                         <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
-                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12 leading-relaxed">
-                        This service performs an intensive reset on severely overgrown lawns. We bring the grass back from waist-high neglect to a manageable state, establishing a healthy foundation for future care. We can prepare all green waste for council collection or handle the removal for you.
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
+                        This severely overgrown lawn was brought back from waist-high neglect to a manageable state, establishing a foundation for future health. To suit your needs, all green waste can be prepared for the local council's collection, or we can remove it for recycling for an additional charge.
                     </p>
                     <div class="relative">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -200,7 +183,7 @@
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                     </div>
 
-                    <!-- Project 3 (was 2) -->
+                    <!-- Project 3 -->
                     <div class="scroll-animate">
                     <div class="relative text-center mb-12">
                         <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Three</span>
@@ -229,7 +212,7 @@
                     </div>
 
                     <!-- Decorative Separator -->
-                    <div class="relative flex items-center justify-center my-16">
+                    <div class="relative flex items-center justify-center my-24">
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                         <span class="flex-shrink mx-4">
                             <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
@@ -239,10 +222,41 @@
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                     </div>
 
-                    <!-- Project 4 (was 3) -->
-                    <div id="project-4" class="scroll-animate">
+                    <!-- Project 4 (New) -->
+                    <div class="scroll-animate">
                     <div class="relative text-center mb-12">
                         <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Four</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Weekly Maintenance & Crisp Edging</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
+                    </div>
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
+                        Our weekly maintenance service ensures your lawn stays immaculate. We provide a quality mow and ensure all edges are left looking sharp and crisp. Green waste can be recycled on-site, bagged for council collection, or removed by us for an additional charge.
+                    </p>
+                    <div class="relative">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                            <div>
+                                <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
+                                <a href="#" class="view-project-details group relative block" data-project-id="project-4">
+                                    <img src="assets/images/prestige-lawncare/project-4/before.jpg" alt="Before image for new project" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                </a>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
+                                <a href="#" class="view-project-details group relative block" data-project-id="project-4">
+                                    <img src="assets/images/prestige-lawncare/project-4/after.jpg" alt="After image for new project" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Decorative Separator -->
+                    <div class="relative flex items-center justify-center my-16"></div>
+
+                    <!-- Project 5 (was 4) -->
+                    <div class="scroll-animate">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Five</span>
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Seasonal Refresh & Mow</h3>
                         <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
@@ -253,8 +267,8 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                             <div>
                                 <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                                <a href="#" class="view-project-details group relative block" data-project-id="project-4">
-                                    <img src="assets/images/prestige-lawncare/project-4/before.png" alt="Before: Large overgrown garden area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
+                                <a href="#" class="view-project-details group relative block" data-project-id="project-5">
+                                    <img src="assets/images/prestige-lawncare/project-5/before.png" alt="Before: Large overgrown garden area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
                                     <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
                                         <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
@@ -263,8 +277,8 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                                <a href="#" class="view-project-details group relative block" data-project-id="project-4">
-                                    <img src="assets/images/prestige-lawncare/project-4/after.jpg" alt="After: Cleared and manicured garden area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
+                                <a href="#" class="view-project-details group relative block" data-project-id="project-5">
+                                    <img src="assets/images/prestige-lawncare/project-5/after.jpg" alt="After: Cleared and manicured garden area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
                                     <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
                                         <span class="mt-2 text-white font-semibold tracking-widest uppercase">View Project</span>
@@ -282,7 +296,7 @@
                     </div>
 
                     <!-- Decorative Separator -->
-                    <div class="relative flex items-center justify-center my-16">
+                    <div class="relative flex items-center justify-center my-24">
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                         <span class="flex-shrink mx-4">
                             <svg class="h-3 w-3 text-[#C8AA6E]/70" fill="currentColor" viewBox="0 0 8 8">
@@ -292,28 +306,28 @@
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                     </div>
 
-                    <!-- Project 5 -->
+                    <!-- Project 6 (was 5) -->
                     <div class="scroll-animate">
                     <div class="relative text-center mb-12">
-                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Five</span>
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">Project Six</span>
                         <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">Overdue Lawn Recovery</h3>
                         <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
                     <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
-                        This service recovers severely overdue lawns, such as this project left for two months, bringing them back to a reasonable, manageable state. To suit your needs, all green waste can be prepared for the local council's collection, or we can remove it for recycling at an additional charge.
+                        This service recovers severely overdue lawns, such as this project left for two months, bringing them back to a reasonable, manageable state. To suit your needs, all green waste can be prepared for the local council's collection, or we can remove it for recycling for an additional charge.
                     </p>
                     <div class="relative">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                             <div>
                                 <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Before</h2>
-                                <a href="#" class="view-project-details group relative block" data-project-id="project-5">
-                                    <img src="assets/images/prestige-lawncare/project-5/before.jpg" alt="Before: Overgrown lawn area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
+                                <a href="#" class="view-project-details group relative block" data-project-id="project-6">
+                                    <img src="assets/images/prestige-lawncare/project-6/before.jpg" alt="Before: Overgrown lawn area" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
                                 </a>
                             </div>
                             <div>
                                 <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">After</h2>
-                                <a href="#" class="view-project-details group relative block" data-project-id="project-5">
-                                    <img src="assets/images/prestige-lawncare/project-5/after.jpg" alt="After: Neatly mowed lawn" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
+                                <a href="#" class="view-project-details group relative block" data-project-id="project-6">
+                                    <img src="assets/images/prestige-lawncare/project-6/after.jpg" alt="After: Neatly mowed lawn" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg object-cover object-[center_100%]">
                                 </a>
                             </div>
                         </div>
@@ -331,35 +345,34 @@
                         <div class="flex-grow border-t border-[#C8AA6E] opacity-20"></div>
                     </div>
 
-                    <!-- Contact Section -->
-                    <div id="contact" class="scroll-animate w-full px-4 pt-10 pb-16 flex flex-col items-center text-center">
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6 text-[#C8AA6E]">Start Your Transformation</h2>
-                        <p class="text-lg max-w-2xl mx-auto mb-12">
-                            Inspired by what you see? Reach out to discuss how we can bring this level of quality to your lawn.
-                        </p>
-
-                        <form id="contact-form" class="w-full max-w-2xl">
-                            <div class="flex flex-wrap -mx-3 mb-6">
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                    <label class="hidden" for="grid-first-name">Name</label>
-                                    <input class="form-input" id="grid-first-name" type="text" placeholder="Name">
-                                </div>
-                                <div class="w-full md:w-1/2 px-3">
-                                    <label class="hidden" for="grid-email">Email</label>
-                                    <input class="form-input" id="grid-email" type="email" placeholder="Email Address">
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap -mx-3 mb-6">
-                                <div class="w-full px-3">
-                                    <label class="hidden" for="grid-message">Message</label>
-                                    <textarea class="form-input" id="grid-message" placeholder="Tell us about your project..."></textarea>
-                                </div>
-                            </div>
-                            <button class="submit-button" type="button">
-                                Send Message
-                            </button>
-                        </form>
+                    <!-- Educational Section: Blade Comparison -->
+                    <div class="scroll-animate">
+                    <div class="relative text-center mb-12">
+                        <span class="block text-lg font-medium text-[#C8AA6E]/60 tracking-widest uppercase">The Prestige Difference</span>
+                        <h3 class="inline-block text-3xl font-medium text-[#ADA694] tracking-wider mt-1 transition-colors duration-300 hover:text-[#C8AA6E]">The Importance of a Sharp Blade</h3>
+                        <span class="block w-24 h-px bg-[#C8AA6E] opacity-50 mx-auto mt-3"></span>
                     </div>
+                    <p class="text-center md:text-left text-lg max-w-3xl mx-auto -mt-4 mb-12">
+                        A blunt mower blade tears and shreds grass, causing stress, browning, and increased risk of disease. In contrast, a sharp, professionally maintained blade provides a clean, surgical cut, allowing the grass to heal quickly and maintain optimal health and colour.
+                    </p>
+                    <div class="relative">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                            <div>
+                                <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Blunt Blade Damage</h2>
+                                <a href="#" class="view-project-details group relative block" data-project-id="blade-comparison">
+                                    <img src="assets/images/prestige-lawncare/blade-comparison/blunt.jpg" alt="Grass torn by a blunt mower blade" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                </a>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-medium text-center mb-4 text-[#C8AA6E]/80 tracking-widest uppercase">Healthy, Sharp Cut</h2>
+                                <a href="#" class="view-project-details group relative block" data-project-id="blade-comparison">
+                                    <img src="assets/images/prestige-lawncare/blade-comparison/sharp.jpg" alt="Cleanly cut grass from a sharp mower blade" class="w-full transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
                 </div>
             </section>
         </div>
@@ -405,24 +418,31 @@
     </script>
     <script type="application/json" id="project-4-data">
     [
-        {"src": "assets/images/prestige-lawncare/project-4/before.png", "caption": "Before", "description": "The condition of the garden before our service. We understand that life gets busy and gardens can become overwhelming. Our job is to handle the hard work, so you don't have to."},
-        {"src": "assets/images/prestige-lawncare/project-4/step-01.png", "caption": "During - Step 1", "description": "The transformation begins. We see the potential in every space, no matter the starting condition, and start by clearing the way for a revitalized garden."},
-        {"src": "assets/images/prestige-lawncare/project-4/step-02.jpg", "caption": "During - Step 2", "description": "With the main clearing complete, the garden is looking 100% better, revealing a clean and manageable space."},
-        {"src": "assets/images/prestige-lawncare/project-4/step-03.jpg", "caption": "During - Step 3", "description": "All green waste & recycling is neatly bagged and prepared for local council collection, leaving your property tidy. We can also arrange for removal at an additional charge."},
-        {"src": "assets/images/prestige-lawncare/project-4/after.jpg", "caption": "After", "description": "The final result: a clean, well-maintained space that you can enjoy with peace of mind."}
+        {"src": "assets/images/prestige-lawncare/project-4/before.jpg", "caption": "Before", "description": "The lawn prior to our weekly maintenance service."},
+        {"src": "assets/images/prestige-lawncare/project-4/after.jpg", "caption": "After", "description": "The result of consistent weekly mowing and edging, leaving a sharp, clean finish."}
     ]
     </script>
     <script type="application/json" id="project-5-data">
     [
-        {"src": "assets/images/prestige-lawncare/project-5/before.jpg", "caption": "Before", "description": "A severely overdue lawn, left for two months, in need of recovery."},
-        {"src": "assets/images/prestige-lawncare/project-5/after.jpg", "caption": "After", "description": "The lawn is brought back to a reasonable, manageable state, ready for regular maintenance."}
+        {"src": "assets/images/prestige-lawncare/project-5/before.png", "caption": "Before", "description": "The condition of the garden before our service. We understand that life gets busy and gardens can become overwhelming. Our job is to handle the hard work, so you don't have to."},
+        {"src": "assets/images/prestige-lawncare/project-5/step-01.png", "caption": "During - Step 1", "description": "The transformation begins. We see the potential in every space, no matter the starting condition, and start by clearing the way for a revitalized garden."},
+        {"src": "assets/images/prestige-lawncare/project-5/step-02.jpg", "caption": "During - Step 2", "description": "With the main clearing complete, the garden is looking 100% better, revealing a clean and manageable space."},
+        {"src": "assets/images/prestige-lawncare/project-5/step-03.jpg", "caption": "During - Step 3", "description": "All green waste & recycling is neatly bagged and prepared for local council collection, leaving your property tidy. We can also arrange for removal at an additional charge."},
+        {"src": "assets/images/prestige-lawncare/project-5/after.jpg", "caption": "After", "description": "The final result: a clean, well-maintained space that you can enjoy with peace of mind."}
     ]
     </script>
-
-    <!-- Footer -->
-    <footer class="text-center py-8 px-4 border-t border-[#ADA694]/10 mt-auto">
-        <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2024 J. Stansfield & Sons. All Rights Reserved.</p>
-    </footer>
+    <script type="application/json" id="project-6-data">
+    [
+        {"src": "assets/images/prestige-lawncare/project-6/before.jpg", "caption": "Before", "description": "A severely overdue lawn, left for two months, in need of recovery."},
+        {"src": "assets/images/prestige-lawncare/project-6/after.jpg", "caption": "After", "description": "The lawn is brought back to a reasonable, manageable state, ready for regular maintenance."}
+    ]
+    </script>
+    <script type="application/json" id="blade-comparison-data">
+    [
+        {"src": "assets/images/prestige-lawncare/blade-comparison/blunt.jpg", "caption": "Blunt Blade Damage", "description": "A blunt mower blade rips and tears the grass rather than cutting it cleanly. This shredding action creates ragged, brown tips, stresses the plant, and opens it up to disease and fungal infections."},
+        {"src": "assets/images/prestige-lawncare/blade-comparison/sharp.jpg", "caption": "Healthy, Sharp Cut", "description": "A sharp, professionally maintained blade delivers a single, clean cut. This allows the grass to heal quickly, retain moisture, and maintain its vibrant green colour, promoting overall lawn health."}
+    ]
+    </script>
 
     <!-- Important Notice Modal -->
     <div id="notice-modal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
@@ -591,7 +611,7 @@
                     const projectId = link.dataset.projectId;
                     
                     // Only show compare button for projects that are not simple before/after
-                    const isMultiStepProject = (projectId === 'project-1' || projectId === 'project-4');
+                    const isMultiStepProject = (projectId === 'project-1' || projectId === 'project-5');
 
                     if (images.length >= 2 && isMultiStepProject) {
                         const btn = document.createElement('button');
@@ -600,16 +620,16 @@
                         let buttonText = 'Compare Before & After';
                         if (projectId === 'project-1') {
                             buttonText = 'Compare Before & Ongoing';
-                        } else if (projectId === 'project-4') {
+                        } else if (projectId === 'project-5') {
                             buttonText = 'Compare Progress';
                         }
                         btn.textContent = buttonText;
                         btn.addEventListener('click', () => {
                             galleryView.classList.add('hidden');
                             compareView.classList.remove('hidden');
-                            // For Project 4, compare from Step 1 instead of the beginning
-                            compareImgBefore.src = (projectId === 'project-4') ? images[1].src : images[0].src;
-                            compareImgAfter.src = images[images.length - 1].src;
+                            // For Project 5, compare from Step 1; for Project 1, compare from the start.
+                            compareImgBefore.src = (projectId === 'project-5') ? currentImages[1].src : currentImages[0].src;
+                            compareImgAfter.src = currentImages[currentImages.length - 1].src;
                         });
                         compareBtnContainer.appendChild(btn);
                     }
@@ -654,7 +674,7 @@
 
                                 // For simple before/after projects, don't show the "View Project" button
                                 // and instead just show the comparison slider directly.
-                                const isSimpleProject = (projectId === 'project-2' || projectId === 'project-3' || projectId === 'project-5');
+                                const isSimpleProject = (projectId === 'project-2' || projectId === 'project-3' || projectId === 'project-4' || projectId === 'project-6' || projectId === 'blade-comparison');
                                 
                                 if (isSimpleProject) {
                                     galleryView.classList.add('hidden');
@@ -663,12 +683,14 @@
                                     compareImgAfter.src = currentImages[1].src;
                                     // For simple projects, the "back" button just closes the modal
                                     const backBtn = document.getElementById('back-to-gallery-btn');
+                                    backBtn.style.display = 'block';
                                     backBtn.onclick = closeModal;
                                 } else {
                                     galleryView.classList.remove('hidden');
                                     compareView.classList.add('hidden');
                                     // For multi-step projects, it goes back to the gallery view
                                     const backBtn = document.getElementById('back-to-gallery-btn');
+                                    backBtn.style.display = 'block';
                                     backBtn.textContent = 'Back to Gallery';
                                     backBtn.onclick = () => {
                                         galleryView.classList.remove('hidden');
@@ -743,5 +765,9 @@
             }
         });
     </script>
+    <!-- Footer -->
+    <footer class="text-center py-8 px-4 border-t border-[#ADA694]/10 mt-auto">
+        <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2024 J. Stansfield & Sons. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

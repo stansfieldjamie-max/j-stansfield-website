@@ -311,3 +311,12 @@ html.modal-is-open {
 }
 .thumbnail-img:hover { border-color: #ADA694; }
 .thumbnail-img.is-active { border-color: #C8AA6E; }
+
+/* Custom styles for the image comparison slider */
+img-comparison-slider {
+    --divider-width: 1px;
+    --divider-color: #C8AA6E;
+    --handle-size: 30px;
+    --handle-color: #C8AA6E;
+    max-height: 65vh; /* Use viewport height for better scaling */
+}
