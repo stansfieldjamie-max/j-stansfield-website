@@ -80,8 +80,10 @@ header.header-scrolled {
     right: 2rem;
     width: 4rem; /* Making it a subtle size */
     height: auto;
-    opacity: 1;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.2; /* Make it much more subtle */
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Make it non-interactive so it doesn't get in the way */
+    z-index: 10; /* Ensure it's above the main content but below modals */
 }
 
 /* On the homepage, the small bee starts hidden */
@@ -95,7 +97,7 @@ header.header-scrolled {
     opacity: 0;
 }
 .is-homepage.scrolled-past-hero .bee-logo-img {
-    opacity: 1;
+    opacity: 0.2; /* Match the new subtle opacity */
     pointer-events: auto;
 }
 
