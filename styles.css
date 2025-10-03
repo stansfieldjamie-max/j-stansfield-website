@@ -320,3 +320,16 @@ img-comparison-slider {
     --handle-color: #C8AA6E;
     max-height: 65vh; /* Use viewport height for better scaling */
 }
+
+/* Elegant border box for subscription offers */
+.elegant-box {
+    position: relative;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #111111; /* A slightly lighter black for depth */
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5); /* Inner shadow for depth */
+    transition: all 0.3s ease-in-out;
+    border: 1px solid;
+    border-image-source: linear-gradient(to bottom, rgba(200, 170, 110, 0.1), rgba(200, 170, 110, 0.6), rgba(200, 170, 110, 0.1));
+    border-image-slice: 1;
+}
