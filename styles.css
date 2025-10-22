@@ -69,7 +69,7 @@ header.header-scrolled {
     width: 24rem; /* 384px */
     height: auto;
     opacity: 0.03; /* Even more subtle, like a true watermark */
-    z-index: -1; /* Behind the quote text */
+    z-index: -1;
     transition: opacity 0.5s ease-in-out;
 }
 
