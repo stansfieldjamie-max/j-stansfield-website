@@ -4,7 +4,7 @@ This repository contains the source code for the official marketing website for 
 
 ## About The Project
 
-A minimalist and elegant single-page website designed to showcase the company's services with a focus on a refined, high-end aesthetic.
+A minimalist and elegant multi-page website designed to showcase the company's services with a focus on a refined, high-end aesthetic. The site features a sophisticated navy and gold theme, with unique color accents for each service to create a distinct brand identity.
 
 ### Services Offered
 
@@ -12,6 +12,8 @@ A minimalist and elegant single-page website designed to showcase the company's 
 *   **Prestige Lawncare:** Expert lawn maintenance and garden care.
 *   **Omega Window Cleaning:** Professional window cleaning for homes and businesses.
 *   **Gutter Suckers:** Specialized gutter cleaning using vacuum technology.
+*   **The Fence Painter:** Professional fence painting to protect and beautify.
+*   **Clean Trim:** Detailed care for hedges, shrubs, and garden borders.
 
 ## Technologies Used
 
@@ -19,3 +21,4 @@ A minimalist and elegant single-page website designed to showcase the company's 
 *   CSS3 (with Tailwind CSS for utility classes)
 *   JavaScript (for interactive elements)
 *   Google Fonts (Cormorant Garamond)
+*   [img-comparison-slider](https://github.com/sneas/img-comparison-slider) for before/after showcases.
