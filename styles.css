@@ -1,6 +1,6 @@
 body {
     /* Using a deep, rich black for the background that fills the entire viewport */
-    background-color: #050505;
+    background-color: #040C18; /* Ink Blue */
     color: #ADA694; /* Soft, readable gray for body text */
     font-family: 'Cormorant Garamond', serif;
     min-height: 100vh;
@@ -18,7 +18,7 @@ header {
 }
 
 header.header-scrolled {
-    background-color: rgba(5, 5, 5, 0.8);
+    background-color: rgba(4, 12, 24, 0.8); /* Ink Blue with transparency */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -176,7 +176,7 @@ header.header-scrolled {
 }
 
 .service-card {
-    background-color: #111111;
+    background-color: #0A1829; /* A slightly lighter navy for cards */
     padding: 2rem;
     border-radius: 0.75rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
@@ -197,7 +197,7 @@ header.header-scrolled {
 .service-selector {
     display: block;
     padding: 1.5rem 1rem;
-    background-color: #111111;
+    background-color: #0A1829; /* A slightly lighter navy for cards */
     border: 1px solid #ADA694;
     border-radius: 0.75rem;
     transition: all 0.3s ease-in-out;
@@ -221,7 +221,7 @@ header.header-scrolled {
 .form-input {
     appearance: none;
     width: 100%;
-    background-color: #111111;
+    background-color: #0A1829; /* A slightly lighter navy for inputs */
     border: 1px solid #ADA694;
     color: #ADA694;
     padding: 0.75rem 1rem;
@@ -249,7 +249,7 @@ textarea.form-input {
 
 .submit-button {
     background-color: #C8AA6E;
-    color: #050505;
+    color: #040C18; /* Ink Blue text */
     padding: 0.75rem 2.5rem;
     border-radius: 9999px;
     font-weight: 600;
@@ -260,7 +260,7 @@ textarea.form-input {
 }
 
 .submit-button:hover {
-    background-color: #050505;
+    background-color: #040C18; /* Ink Blue background */
     color: #C8AA6E;
 }
 
@@ -328,7 +328,7 @@ img-comparison-slider {
     position: relative;
     padding: 2rem;
     border-radius: 0.5rem;
-    background-color: #111111; /* A slightly lighter black for depth */
+    background-color: #0A1829; /* A slightly lighter navy for depth */
     box-shadow: inset 0 0 15px rgba(0,0,0,0.5); /* Inner shadow for depth */
     transition: all 0.3s ease-in-out;
     border: 1px solid;
