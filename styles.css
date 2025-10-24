@@ -24,6 +24,18 @@ header.header-scrolled {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
+.logo-icon {
+    width: 1.75rem; /* 28px */
+    height: 1.75rem; /* 28px */
+    color: #ADA694;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo-container a:hover .logo-icon {
+    color: #C8AA6E;
+    transform: scale(1.1);
+}
+
 .logo-text {
     opacity: 1;
     font-size: 0.875rem;

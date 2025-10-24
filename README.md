@@ -1,6 +1,6 @@
-# J. Stansfield & Sons - Company Website
+# Premium Property Services - Company Website
 
-This repository contains the source code for the official marketing website for J. Stansfield & Sons, a company offering a range of premium home and property maintenance services.
+This repository contains the source code for the official marketing website for a portfolio of premium home and property maintenance service brands.
 
 ## About The Project
 
