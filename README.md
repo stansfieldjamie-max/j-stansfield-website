@@ -14,6 +14,7 @@ A minimalist and elegant multi-page website designed to showcase the company's s
 *   **Gutter Suckers:** Specialized gutter cleaning using vacuum technology.
 *   **The Fence Painter:** Professional fence painting to protect and beautify.
 *   **Clean Trim:** Detailed care for hedges, shrubs, and garden borders.
+*   **Precision Weed Services:** Targeted solutions for a weed-free property.
 
 ## Technologies Used
 
