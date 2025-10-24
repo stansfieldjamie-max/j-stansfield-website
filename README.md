@@ -1,4 +1,4 @@
-# Premium Property Services - Company Website
+# Premium Property Care Services - Company Website
 
 This repository contains the source code for the official marketing website for a portfolio of premium home and property maintenance service brands.
 
@@ -15,6 +15,7 @@ A minimalist and elegant multi-page website designed to showcase the company's s
 *   **The Fence Painter:** Professional fence painting to protect and beautify.
 *   **Clean Trim:** Detailed care for hedges, shrubs, and garden borders.
 *   **Precision Weed Services:** Targeted solutions for a weed-free property.
+*   **Landscaping:** Full-scale garden design and construction.
 
 ## Technologies Used
 
