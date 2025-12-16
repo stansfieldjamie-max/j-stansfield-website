@@ -9,7 +9,7 @@ A minimalist and elegant multi-page website designed to showcase the company's s
 ### Services Offered
 
 *   **Aqua Blast:** High-pressure cleaning for driveways, patios, and outdoor spaces.
-*   **Prestige Lawncare:** Expert lawn maintenance and garden care.
+*   **Sterling Lawncare:** Expert lawn maintenance and garden care.
 *   **Omega Window Cleaning:** Professional window cleaning for homes and businesses.
 *   **Gutter Suckers:** Specialized gutter cleaning using vacuum technology.
 *   **The Fence Painter:** Professional fence painting to protect and beautify.
