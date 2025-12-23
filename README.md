@@ -1,26 +1,25 @@
-# Premium Property Care Services - Company Website
+# Premium Property Care Services
 
-This repository contains the source code for the official marketing website for a portfolio of premium home and property maintenance service brands.
+Welcome to the official website repository for Premium Property Care Services. This website showcases our range of high-quality property maintenance services.
 
-## About The Project
+## Services Included
 
-A minimalist and elegant multi-page website designed to showcase the company's services with a focus on a refined, high-end aesthetic. The site features a sophisticated navy and gold theme, with unique color accents for each service to create a distinct brand identity.
-
-### Services Offered
-
-*   **Aqua Blast:** High-pressure cleaning for driveways, patios, and outdoor spaces.
-*   **Sterling Lawncare:** Expert lawn maintenance and garden care.
-*   **Omega Window Cleaning:** Professional window cleaning for homes and businesses.
-*   **Gutter Suckers:** Specialized gutter cleaning using vacuum technology.
-*   **The Fence Painter:** Professional fence painting to protect and beautify.
-*   **Clean Trim:** Detailed care for hedges, shrubs, and garden borders.
-*   **Precision Weed Services:** Targeted solutions for a weed-free property.
-*   **Landscaping:** Full-scale garden design and construction.
+*   **Sterling Lawncare:** Premium lawn maintenance and restoration.
+*   **Omega Window Cleaning:** Residential window cleaning (Exterior, Interior, and Signature Service).
+*   **Aqua Blast:** High-pressure exterior cleaning for driveways and patios.
+*   **Gutter Suckers:** Safe, ground-based gutter clearance.
+*   **The Fence Painter:** Fence painting and protection.
+*   **Clean Trim:** Hedge and shrub maintenance.
+*   **Precision Weed Services:** Targeted weed control.
 
 ## Technologies Used
 
-*   HTML5
-*   CSS3 (with Tailwind CSS for utility classes)
-*   JavaScript (for interactive elements)
-*   Google Fonts (Cormorant Garamond)
-*   [img-comparison-slider](https://github.com/sneas/img-comparison-slider) for before/after showcases.
+*   **HTML5**
+*   **Tailwind CSS** (via CDN)
+*   **JavaScript** (Vanilla)
+*   **Google Fonts** (Cormorant Garamond)
+*   **Image Comparison Slider** (for galleries)
+
+## Setup
+
+This is a static site. To view it, simply open `index.html` in your web browser.
