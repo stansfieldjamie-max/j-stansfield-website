@@ -93,7 +93,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left items-start">
                         <!-- Package 1 -->
-                        <div class="flex items-start space-x-4 p-6 border border-transparent">
+                        <div class="flex items-start space-x-4 p-6 border border-transparent cursor-pointer transition-colors duration-300 hover:bg-[#C8AA6E]/5 rounded-lg" onclick="scrollToPricing('exterior')">
                             <svg class="h-8 w-8 text-[#63A2D8] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.904-2.636l1.591-1.591M5.25 12H3m4.227-4.904L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
                             <div>
                                 <h4 class="font-bold text-xl text-[#C8AA6E] transition-colors duration-300 hover:text-[#63A2D8]">Exterior Clean</h4>
@@ -101,7 +101,7 @@
                             </div>
                         </div>
                         <!-- Package 2 -->
-                        <div class="flex items-start space-x-4 p-6 border border-transparent">
+                        <div class="flex items-start space-x-4 p-6 border border-transparent cursor-pointer transition-colors duration-300 hover:bg-[#C8AA6E]/5 rounded-lg" onclick="scrollToPricing('interior')">
                             <svg class="h-8 w-8 text-[#63A2D8] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
                             <div>
                                 <h4 class="font-bold text-xl text-[#C8AA6E] transition-colors duration-300 hover:text-[#63A2D8]">Interior Clean</h4>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <!-- Package 3 -->
-                        <div class="flex items-start space-x-4 p-6 border border-[#C8AA6E] rounded-lg relative transition-all duration-300 hover:shadow-xl hover:shadow-[#C8AA6E]/10 md:col-span-2 md:w-2/3 md:mx-auto">
+                        <div class="flex items-start space-x-4 p-6 border border-[#C8AA6E] rounded-lg relative transition-all duration-300 hover:shadow-xl hover:shadow-[#C8AA6E]/10 md:col-span-2 md:w-2/3 md:mx-auto cursor-pointer" onclick="scrollToPricing('signature')">
                             <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C8AA6E] text-[#040C18] text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">Signature Service</span>
                             <svg class="h-8 w-8 text-[#63A2D8] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a3.375 3.375 0 00-2.685-2.685L11.25 18l1.938-.648a3.375 3.375 0 002.685-2.685L16.25 13l.648 1.938a3.375 3.375 0 002.685 2.685L21.75 18l-1.938.648a3.375 3.375 0 00-2.685 2.685z" /></svg>
                             <div>
@@ -179,8 +179,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£16.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £20.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -264,8 +265,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£18.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £24.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -349,8 +351,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£20.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £28.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -434,8 +437,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£23.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £30.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -519,8 +523,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£26.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £35.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -604,8 +609,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£32.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £45.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -693,8 +699,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£16.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £20.00</p>
                             </div>
                         
                             <!-- Divider -->
@@ -739,8 +746,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£18.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £24.00</p>
                             </div>
                             <div class="mb-3 h-px w-full bg-gradient-to-r from-transparent via-[#C8AA6E]/20 to-transparent"></div>
                             <div class="relative z-10 space-y-1">
@@ -769,8 +777,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£20.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £28.00</p>
                             </div>
                             <div class="mb-3 h-px w-full bg-gradient-to-r from-transparent via-[#C8AA6E]/20 to-transparent"></div>
                             <div class="relative z-10 space-y-1">
@@ -799,8 +808,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£23.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £30.00</p>
                             </div>
                             <div class="mb-3 h-px w-full bg-gradient-to-r from-transparent via-[#C8AA6E]/20 to-transparent"></div>
                             <div class="relative z-10 space-y-1">
@@ -829,8 +839,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£26.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £35.00</p>
                             </div>
                             <div class="mb-3 h-px w-full bg-gradient-to-r from-transparent via-[#C8AA6E]/20 to-transparent"></div>
                             <div class="relative z-10 space-y-1">
@@ -859,8 +870,9 @@
                             <div class="relative z-10 mb-3">
                                 <div class="flex items-baseline">
                                     <span class="text-3xl font-light text-white tracking-tight">£32.00</span>
-                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ clean</span>
+                                    <span class="ml-2 text-sm text-[#ADA694]/80">/ regular</span>
                                 </div>
+                                <p class="text-sm font-medium text-[#C8AA6E] mt-1">First Clean: £45.00</p>
                             </div>
                             <div class="mb-3 h-px w-full bg-gradient-to-r from-transparent via-[#C8AA6E]/20 to-transparent"></div>
                             <div class="relative z-10 space-y-1">
@@ -1135,6 +1147,11 @@
             const activeBtn = document.getElementById('tab-' + tabName);
             activeBtn.classList.remove('border-[#C8AA6E]/30', 'text-[#ADA694]');
             activeBtn.classList.add('bg-[#63A2D8]', 'text-[#0A1829]', 'border-[#63A2D8]');
+        }
+
+        function scrollToPricing(tabName) {
+            switchPricingTab(tabName);
+            document.getElementById('pricing-section').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 
