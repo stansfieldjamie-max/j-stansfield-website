@@ -25,10 +25,24 @@
             animation: shimmer 3s ease-in-out infinite;
         }
     </style>
+    <!-- Schema Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Premium Property Care Services",
+      "description": "Expert property care services including lawn maintenance, window cleaning, and exterior rejuvenation.",
+      "priceRange": "££",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "UK"
+      }
+    }
+    </script>
 </head>
 <body class="antialiased is-homepage">
     <!-- Header/Navigation -->
-    <header class="p-6 md:p-8 flex justify-between items-center z-50">
+    <header class="fixed w-full top-0 z-50 p-6 md:p-8 flex justify-between items-center transition-all duration-300 bg-[#0A1829]/80 backdrop-blur-md border-b border-[#C8AA6E]/10">
         <div class="logo-container">
             <a href="index.html">
                 <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
@@ -58,7 +72,7 @@
     <!-- Main Content Container -->
     <main class="flex-grow">
         <!-- Hero Section with Quote -->
-        <section id="homepage" class="h-[calc(100vh-7rem)] flex flex-col items-center justify-center text-center px-4 relative">
+        <section id="homepage" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20">
             <img src="assets/images/bee-logo.png" alt="Large golden bee logo as a watermark" class="large-bee-logo-img">
             <p class="shimmer-text text-3xl md:text-5xl lg:text-6xl font-light italic leading-snug tracking-wide max-w-4xl mx-auto">
                 "You've got a life to live. We'll handle the to-do list."
@@ -202,6 +216,43 @@
                 </div>
             </section>
 
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="scroll-animate w-full px-4 py-16 flex flex-col items-center text-center">
+                <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-12 text-[#C8AA6E]">Client Stories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+                    <!-- Review 1 -->
+                    <div class="p-8 rounded-2xl border border-[#C8AA6E]/10 bg-[#040C18]/40 relative hover:border-[#C8AA6E]/30 transition-colors">
+                        <div class="text-[#C8AA6E] text-5xl absolute -top-4 left-6 opacity-20 font-serif">"</div>
+                        <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">The difference in our lawn is night and day. Sterling Lawncare didn't just cut the grass; they transformed the entire garden.</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                            <p class="text-white font-medium tracking-wider text-sm">Sarah J., Cheshire</p>
+                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="p-8 rounded-2xl border border-[#C8AA6E]/10 bg-[#040C18]/40 relative hover:border-[#C8AA6E]/30 transition-colors">
+                        <div class="text-[#C8AA6E] text-5xl absolute -top-4 left-6 opacity-20 font-serif">"</div>
+                        <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">Finally, a window cleaner who actually cleans the frames! My house looks brand new again. Highly recommended.</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                            <p class="text-white font-medium tracking-wider text-sm">Mark T., Wilmslow</p>
+                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="p-8 rounded-2xl border border-[#C8AA6E]/10 bg-[#040C18]/40 relative hover:border-[#C8AA6E]/30 transition-colors">
+                        <div class="text-[#C8AA6E] text-5xl absolute -top-4 left-6 opacity-20 font-serif">"</div>
+                        <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">Professional, polite, and incredibly thorough. It's rare to find tradesmen who take this much pride in their work.</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                            <p class="text-white font-medium tracking-wider text-sm">Emma R., Altrincham</p>
+                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Contact Section -->
             <section id="contact" class="scroll-animate w-full px-4 pb-24 flex flex-col items-center text-center">
                 <div class="w-full max-w-4xl p-8 md:p-12 rounded-3xl bg-gradient-to-b from-[#0A1829] to-[#050e16] border border-[#C8AA6E]/20 relative overflow-hidden">
@@ -236,7 +287,7 @@
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </a>
-                        <a href="the-fence-painter.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA6E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
+                        <a href="the-fence-painter.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA69E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
                             <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
                                 <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">The Fence Painter</span>
                                 <span class="text-[10px] font-bold uppercase tracking-wider border border-[#C8AA6E] text-[#C8AA6E] group-hover:border-[#040C18] group-hover:text-[#040C18] px-2 py-0.5 rounded w-fit">Coming Soon</span>
@@ -259,7 +310,7 @@
 
     <!-- Footer -->
     <footer class="text-center py-8 px-4 border-t border-[#ADA694]/10 mt-auto">
-        <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2025 Premium Property Care Services</p>
+        <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2025 Premium Property Care Services. All Rights Reserved.</p>
     </footer>
 
     <!-- Bee Logo -->
