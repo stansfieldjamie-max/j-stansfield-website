@@ -1,6 +1,6 @@
 # Premium Property Care Services
 
-Welcome to the official website repository for Premium Property Care Services. This website showcases our range of high-quality property maintenance services.
+Welcome to the official website repository for Premium Property Care Services. This website showcases our range of high-quality property maintenance services with a focus on "World Class, No Nonsense" user experience.
 
 ## Services Included
 
@@ -10,7 +10,6 @@ Welcome to the official website repository for Premium Property Care Services. T
 *   **Gutter Suckers:** Safe, ground-based gutter clearance.
 *   **The Fence Painter:** Fence painting and protection.
 *   **Clean Trim:** Hedge and shrub maintenance.
-*   **Precision Weed Services:** Targeted weed control.
 
 ## Technologies Used
 
@@ -19,6 +18,7 @@ Welcome to the official website repository for Premium Property Care Services. T
 *   **JavaScript** (Vanilla)
 *   **Google Fonts** (Cormorant Garamond)
 *   **Image Comparison Slider** (for galleries)
+*   **JSON-LD Schema** (for Local Business SEO)
 
 ## Setup
 

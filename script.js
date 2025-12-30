@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Logic
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuButton = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenuButton = document.getElementById('close-mobile-menu');
 
