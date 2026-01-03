@@ -1,14 +1,18 @@
 body {
     /* Using a deep, rich black for the background that fills the entire viewport */
-    background-color: #040C18; /* Ink Blue */
+    background-color: #0A1829; /* Dark Navy */
     color: #ADA694; /* Soft, readable gray for body text */
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
     /* Allow vertical scrolling by default on all pages. JS will handle locking it for modals. */
     overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 header {
