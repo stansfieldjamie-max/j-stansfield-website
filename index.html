@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Property Care Services</title>
+    <title>PCS</title>
     <meta name="description" content="Expert property care services including lawn maintenance, window cleaning, and exterior rejuvenation. Restoring pride in your home with professional, reliable service.">
     <link rel="icon" type="image/png" href="assets/images/bee-logo.png">
     <!-- Tailwind CSS CDN for styling -->
@@ -13,16 +13,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Custom shimmer for Homepage */
-        .gold-shimmer {
-            color: transparent;
-            background: linear-gradient(90deg, #C8AA6E 0%, #F0E6D2 50%, #C8AA6E 100%);
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            animation: shimmer 3s ease-in-out infinite;
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
         }
     </style>
     <!-- Schema Markup for Local Business -->
@@ -30,7 +27,7 @@
     {
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
-      "name": "Premium Property Care Services",
+      "name": "PCS",
       "description": "Expert property care services including lawn maintenance, window cleaning, and exterior rejuvenation.",
       "priceRange": "££",
       "address": {
@@ -40,42 +37,46 @@
     }
     </script>
 </head>
-<body class="antialiased is-homepage">
+<body class="antialiased is-homepage bg-[#0A1829] text-white">
     <!-- Header/Navigation -->
-    <header class="fixed w-full top-0 z-50 p-6 md:p-8 flex justify-between items-center transition-all duration-300 bg-[#0A1829]/80 backdrop-blur-md border-b border-[#C8AA6E]/10">
+    <header class="fixed w-full top-0 z-50 p-6 md:p-8 flex justify-between items-center transition-all duration-300 bg-[#0A1829]/95 backdrop-blur-md border-b border-[#C8AA6E]/20">
         <div class="logo-container">
             <a href="index.html">
-                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
+                <svg class="w-8 h-8 text-[#C8AA6E]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
             </a>
         </div>
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-            <a href="#our-services" class="text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 text-sm tracking-widest uppercase">Services</a>
-            <a href="#about" class="text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 text-sm tracking-widest uppercase">About</a>
-            <a href="#contact" class="px-6 py-2 border border-[#C8AA6E] rounded-full text-[#C8AA6E] hover:bg-[#C8AA6E] hover:text-[#0A1829] transition-all duration-300 text-sm tracking-widest uppercase font-medium">Get Started</a>
+            <a href="#our-services" class="text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 text-sm font-semibold uppercase tracking-widest">Services</a>
+            <a href="#about" class="text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 text-sm font-semibold uppercase tracking-widest">About</a>
+            <a href="#contact" class="px-6 py-2 border border-[#C8AA6E] rounded-md text-[#C8AA6E] hover:bg-[#C8AA6E] hover:text-[#0A1829] transition-all duration-300 text-sm uppercase font-bold tracking-widest">Get a Quote</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden text-[#C8AA6E] opacity-50 hover:opacity-100 transition-opacity focus:outline-none" aria-label="Open Menu">
+        <button id="mobile-menu-btn" class="md:hidden text-[#C8AA6E] opacity-80 hover:opacity-100 transition-opacity focus:outline-none" aria-label="Open Menu">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
     </header>
 
     <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#040C18] transform -translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden flex flex-col items-center justify-center space-y-8">
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#0A1829] transform -translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden flex flex-col items-center justify-center space-y-8 shadow-2xl">
         <button id="close-mobile-menu" class="absolute top-6 right-6 text-[#C8AA6E] focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <a href="#our-services" class="text-2xl text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 tracking-widest uppercase mobile-link">Services</a>
-        <a href="#about" class="text-2xl text-[#ADA694] hover:text-[#C8AA6E] transition-colors duration-300 tracking-widest uppercase mobile-link">About</a>
-        <a href="#contact" class="text-2xl text-[#C8AA6E] font-medium tracking-widest uppercase mobile-link">Get Started</a>
+        <a href="#our-services" class="text-2xl text-[#ADA694] hover:text-[#C8AA6E] font-bold uppercase tracking-widest mobile-link">Services</a>
+        <a href="#about" class="text-2xl text-[#ADA694] hover:text-[#C8AA6E] font-bold uppercase tracking-widest mobile-link">About</a>
+        <a href="#contact" class="text-2xl text-[#C8AA6E] font-bold uppercase tracking-widest mobile-link">Get a Quote</a>
     </div>
 
     <!-- Main Content Container -->
     <main class="flex-grow">
         <!-- Hero Section with Quote -->
         <section id="homepage" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20">
-            <img src="assets/images/bee-logo.png" alt="Large golden bee logo as a watermark" class="large-bee-logo-img">
-            <p class="shimmer-text text-3xl md:text-5xl lg:text-6xl font-light italic leading-snug tracking-wide max-w-4xl mx-auto">
-                "You've got a life to live. We'll handle the to-do list."
+            <img src="assets/images/bee-logo.png" alt="Large golden bee logo as a watermark" class="large-bee-logo-img opacity-5">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight max-w-5xl mx-auto mb-6">
+                Professional Property Care.<br>
+                <span class="text-[#C8AA6E]">Transparent Pricing.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-[#ADA694] max-w-2xl mx-auto font-light leading-relaxed">
+                Expert lawn maintenance and window cleaning services. We restore pride in your home with reliable, high-quality workmanship.
             </p>
             <!-- Scroll down indicator -->
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
@@ -88,166 +89,85 @@
         <div class="container mx-auto px-4 max-w-7xl">
             <!-- Our Services Section -->
             <section id="our-services" class="scroll-animate w-full px-4 pt-24 pb-16 flex flex-col items-center text-center">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-16 text-[#C8AA6E]">Our Services</h2>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-wide mb-4 text-white">Our Services</h2>
+                <p class="text-lg text-[#ADA694] mb-16 max-w-2xl">Premium results for your home's exterior, delivered with consistency and care.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-start justify-center">
-                    <!-- Service Cards -->
+                    <!-- Card 1 -->
                     <a href="sterling-lawncare-gallery.html" class="block transition-transform duration-300 hover:-translate-y-1">
-                        <div class="service-card h-full bg-[#0A1829]">
-                            <div class="flex items-center justify-center gap-x-3 mb-2">
-                                <img src="assets/images/logos/sterling-lawncare-logo.png" alt="Sterling Lawncare logo" class="h-8 w-auto">
-                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Sterling Lawncare</h3>
+                        <div class="h-full bg-[#11223a] rounded-xl border border-[#C8AA6E]/20 overflow-hidden p-6 transition-all hover:border-[#C8AA6E]">
+                            <div class="flex items-center justify-center gap-x-3 mb-4">
+                                <img src="assets/images/logos/sterling-lawncare-logo.png" alt="Sterling Lawncare logo" class="h-10 w-auto">
+                                <h3 class="text-2xl font-bold text-[#C8AA6E]">Sterling Lawncare</h3>
                             </div>
-                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">From regular mows to full restorations.</p>
-                            <img src="assets/images/services/prestige-lawncare-card.jpg" alt="Perfectly striped green lawn" class="service-card-img mt-4 object-top">
+                            <p class="text-sm text-center text-[#ADA694] mt-2 font-medium">From regular mows to full restorations.</p>
+                            <img src="assets/images/services/prestige-lawncare-card.jpg" alt="Perfectly striped green lawn" class="w-full h-48 object-cover rounded-lg mt-6 opacity-90 hover:opacity-100 transition-opacity">
                         </div>
                     </a>
+
+                    <!-- Card 2 -->
                     <a href="omega-window-cleaning.html" class="block transition-transform duration-300 hover:-translate-y-1">
-                        <div class="service-card h-full bg-[#0A1829]">
-                            <div class="flex items-center justify-center gap-x-3 mb-2">
-                                <img src="assets/images/logos/omega-window-cleaning-logo.png" alt="Omega Window Cleaning logo" class="h-8 w-auto">
-                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Omega Window Cleaning</h3>
+                        <div class="h-full bg-[#11223a] rounded-xl border border-[#C8AA6E]/20 overflow-hidden p-6 transition-all hover:border-[#C8AA6E]">
+                            <div class="flex items-center justify-center gap-x-3 mb-4">
+                                <img src="assets/images/logos/omega-window-cleaning-logo.png" alt="Omega Window Cleaning logo" class="h-10 w-auto">
+                                <h3 class="text-2xl font-bold text-[#C8AA6E]">Omega Window Cleaning</h3>
                             </div>
-                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Crystal clear views, inside and out.</p>
-                            <img src="assets/images/services/omega-window-cleaning-card.jpg" alt="Spotless window reflecting a clear blue sky" class="service-card-img mt-4">
-                        </div>
-                    </a>
-                    <a href="aqua-blast.html" class="block"> <!-- Aqua Blast - Limited -->
-                        <div class="service-card h-full relative bg-[#0A1829]">
-                            <div class="absolute inset-0 bg-[#040C18]/75 flex items-center justify-center z-10 rounded-lg">
-                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Coming Soon</span>
-                            </div>
-                            <div class="flex items-center justify-center gap-x-3 mb-2">
-                                <img src="assets/images/logos/aqua-blast-logo.png" alt="Aqua Blast logo" class="h-8 w-auto">
-                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Aqua Blast</h3>
-                            </div>
-                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Revive your driveway, patio, and paths.</p>
-                            <img src="assets/images/services/aqua-blast-card.jpg" alt="High-pressure cleaning a stone patio" class="service-card-img mt-4 filter grayscale">
-                        </div>
-                    </a>
-                    <a href="gutter-suckers.html" class="block"> <!-- Gutter Suckers - Limited -->
-                        <div class="service-card h-full relative bg-[#0A1829]">
-                            <div class="absolute inset-0 bg-[#040C18]/75 flex items-center justify-center z-10 rounded-lg">
-                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Coming Soon</span>
-                            </div>
-                            <div class="flex items-center justify-center gap-x-3 mb-2">
-                                <img src="assets/images/logos/gutter-suckers-logo.png" alt="Gutter Suckers logo" class="h-8 w-auto">
-                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Gutter Suckers</h3>
-                            </div>
-                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Safer, ground-based cleaning to protect your home.</p>
-                            <img src="assets/images/services/gutter-suckers-card.jpg" alt="Gutter cleaning with a powerful vacuum" class="service-card-img mt-4 object-top filter grayscale">
-                        </div>
-                    </a>
-                    <a href="the-fence-painter.html" class="block"> <!-- The Fence Painter - Limited -->
-                        <div class="service-card h-full relative bg-[#0A1829]">
-                            <div class="absolute inset-0 bg-[#040C18]/75 flex items-center justify-center z-10 rounded-lg">
-                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Coming Soon</span>
-                            </div>
-                            <div class="flex items-center justify-center gap-x-3 mb-2">
-                                <img src="assets/images/logos/the-fence-painter-logo.png" alt="The Fence Painter logo" class="h-8 w-auto">
-                                <h3 class="text-2xl font-medium text-[#C8AA6E]">The Fence Painter</h3>
-                            </div>
-                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Protect and beautify your fencing.</p>
-                            <img src="assets/images/services/the-fence-painter-card.png" alt="A freshly painted dark grey fence" class="service-card-img mt-4 filter grayscale">
-                        </div>
-                    </a>
-                    <a href="clean-trim.html" class="block"> <!-- Clean Trim - Limited -->
-                        <div class="service-card h-full relative bg-[#0A1829]">
-                            <div class="absolute inset-0 bg-[#040C18]/75 flex items-center justify-center z-10 rounded-lg">
-                                <span class="text-xl font-bold text-[#C8AA6E] tracking-widest uppercase border-2 border-[#C8AA6E] px-6 py-3 rounded">Coming Soon</span>
-                            </div>
-                            <div class="flex items-center justify-center gap-x-3 mb-2">
-                                <img src="assets/images/logos/clean-trim-logo.png" alt="Clean Trim logo" class="h-8 w-auto">
-                                <h3 class="text-2xl font-medium text-[#C8AA6E]">Clean Trim</h3>
-                            </div>
-                            <p class="text-sm text-center text-[#ADA694]/80 mt-2">Detailed care for hedges, shrubs, and garden borders.</p>
-                            <img src="assets/images/services/clean-trim-card.jpg" alt="A perfectly trimmed hedge" class="service-card-img mt-4 object-top filter grayscale">
+                            <p class="text-sm text-center text-[#ADA694] mt-2 font-medium">Crystal clear views, inside and out.</p>
+                            <img src="assets/images/services/omega-window-cleaning-card.jpg" alt="Spotless window reflecting a clear blue sky" class="w-full h-48 object-cover rounded-lg mt-6 opacity-90 hover:opacity-100 transition-opacity">
                         </div>
                     </a>
                 </div>
             </section>
 
             <!-- About Us Section -->
-            <section id="about" class="scroll-animate w-full px-4 pt-16 pb-24 flex flex-col items-center text-center relative overflow-hidden">
-                <!-- Background decoration -->
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none opacity-10">
-                    <div class="absolute top-20 left-10 w-64 h-64 bg-[#C8AA6E] rounded-full blur-[100px]"></div>
-                    <div class="absolute bottom-20 right-10 w-64 h-64 bg-[#5C9966] rounded-full blur-[100px]"></div>
-                </div>
-
-                <h2 class="gold-shimmer text-4xl md:text-5xl lg:text-6xl font-light tracking-wide mb-12">About Us</h2>
+            <section id="about" class="scroll-animate w-full px-4 pt-16 pb-24 flex flex-col items-center text-center relative">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-wide mb-12 text-white">Why Choose Us?</h2>
                 
                 <div class="relative z-10 max-w-5xl mx-auto">
-                    <p class="text-2xl lg:text-3xl font-medium italic text-[#C8AA6E] tracking-wider mb-12">
-                        "We are not the most expensive, nor are we the cheapest—we are fair."
+                    <p class="text-2xl lg:text-3xl font-semibold text-[#C8AA6E] mb-12">
+                        "Quality you can see. Reliability you can trust."
                     </p>
                     
-                    <p class="text-lg lg:text-xl font-light leading-relaxed text-[#ADA694] max-w-3xl mx-auto mb-16">
-                        Your home is your biggest investment, but keeping it perfect takes time you don't always have. Our goal is simple: we handle the hard work so you can just enjoy coming home. We give you back your weekends and restore that feeling of pride in your property.
+                    <p class="text-lg lg:text-xl leading-relaxed text-[#ADA694] max-w-3xl mx-auto mb-16">
+                        Maintaining a beautiful property requires time, effort, and the right equipment. We are dedicated to delivering exceptional results that enhance your home's curb appeal. Our team handles the hard work with professional standards, allowing you to enjoy your outdoor spaces without the hassle.
                     </p>
-
-                    <!-- Value Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-left">
-                        <!-- Card 1 -->
-                        <div class="group p-8 rounded-2xl border border-[#C8AA6E]/20 bg-[#0A1829]/50 backdrop-blur-sm hover:border-[#C8AA6E] transition-all duration-500 hover:shadow-[0_0_30px_rgba(200,170,110,0.1)]">
-                            <div class="w-12 h-12 mb-6 text-[#C8AA6E] group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            </div>
-                            <h3 class="text-xl font-medium text-white mb-3 group-hover:text-[#C8AA6E] transition-colors">Get Your Weekends Back</h3>
-                            <p class="text-[#ADA694] text-sm leading-relaxed">Stop spending your weekends working. We handle the chores so you can enjoy your home.</p>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="group p-8 rounded-2xl border border-[#C8AA6E]/20 bg-[#0A1829]/50 backdrop-blur-sm hover:border-[#C8AA6E] transition-all duration-500 hover:shadow-[0_0_30px_rgba(200,170,110,0.1)]">
-                            <div class="w-12 h-12 mb-6 text-[#C8AA6E] group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            </div>
-                            <h3 class="text-xl font-medium text-white mb-3 group-hover:text-[#C8AA6E] transition-colors">Done Right, Every Time</h3>
-                            <p class="text-[#ADA694] text-sm leading-relaxed">Expert care using professional-grade equipment for results that DIY simply can't match.</p>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="group p-8 rounded-2xl border border-[#C8AA6E]/20 bg-[#0A1829]/50 backdrop-blur-sm hover:border-[#C8AA6E] transition-all duration-500 hover:shadow-[0_0_30px_rgba(200,170,110,0.1)]">
-                            <div class="w-12 h-12 mb-6 text-[#C8AA6E] group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A47.416 47.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" /></svg>
-                            </div>
-                            <h3 class="text-xl font-medium text-white mb-3 group-hover:text-[#C8AA6E] transition-colors">No Surprise Costs</h3>
-                            <p class="text-[#ADA694] text-sm leading-relaxed">No hidden fees or inflated quotes. Just honest pricing for premium quality work.</p>
-                        </div>
-                    </div>
                 </div>
             </section>
 
             <!-- Testimonials Section -->
             <section id="testimonials" class="scroll-animate w-full px-4 py-16 flex flex-col items-center text-center">
-                <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-12 text-[#C8AA6E]">Client Stories</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
-                    <!-- Review 1 -->
-                    <div class="p-8 rounded-2xl border border-[#C8AA6E]/10 bg-[#040C18]/40 relative hover:border-[#C8AA6E]/30 transition-colors">
-                        <div class="text-[#C8AA6E] text-5xl absolute -top-4 left-6 opacity-20 font-serif">"</div>
-                        <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">The difference in our lawn is night and day. Sterling Lawncare didn't just cut the grass; they transformed the entire garden.</p>
-                        <div class="flex items-center justify-center gap-2">
-                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
-                            <p class="text-white font-medium tracking-wider text-sm">Sarah J., Cheshire</p>
-                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-wide mb-12 text-white">Trusted by the Community</h2>
+                <div class="max-w-6xl w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Review 1 -->
+                        <div class="p-8 rounded-xl border border-[#C8AA6E]/20 bg-[#11223a] relative hover:border-[#C8AA6E] transition-all">
+                            <div class="text-[#C8AA6E] text-6xl absolute -top-4 left-6">"</div>
+                            <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">The difference in our lawn is night and day. Sterling Lawncare didn't just cut the grass; they transformed the entire garden.</p>
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="w-8 h-px bg-[#C8AA6E]/50"></div>
+                                <p class="text-white font-bold text-sm">Sarah J., Cheshire</p>
+                                <div class="w-8 h-px bg-[#C8AA6E]/50"></div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Review 2 -->
-                    <div class="p-8 rounded-2xl border border-[#C8AA6E]/10 bg-[#040C18]/40 relative hover:border-[#C8AA6E]/30 transition-colors">
-                        <div class="text-[#C8AA6E] text-5xl absolute -top-4 left-6 opacity-20 font-serif">"</div>
-                        <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">Finally, a window cleaner who actually cleans the frames! My house looks brand new again. Highly recommended.</p>
-                        <div class="flex items-center justify-center gap-2">
-                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
-                            <p class="text-white font-medium tracking-wider text-sm">Mark T., Wilmslow</p>
-                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                        <!-- Review 2 -->
+                        <div class="p-8 rounded-xl border border-[#C8AA6E]/20 bg-[#11223a] relative hover:border-[#C8AA6E] transition-all">
+                            <div class="text-[#C8AA6E] text-6xl absolute -top-4 left-6">"</div>
+                            <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">Finally, a window cleaner who actually cleans the frames! My house looks brand new again. Highly recommended.</p>
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="w-8 h-px bg-[#C8AA6E]/50"></div>
+                                <p class="text-white font-bold text-sm">Mark T., Wilmslow</p>
+                                <div class="w-8 h-px bg-[#C8AA6E]/50"></div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Review 3 -->
-                    <div class="p-8 rounded-2xl border border-[#C8AA6E]/10 bg-[#040C18]/40 relative hover:border-[#C8AA6E]/30 transition-colors">
-                        <div class="text-[#C8AA6E] text-5xl absolute -top-4 left-6 opacity-20 font-serif">"</div>
-                        <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">Professional, polite, and incredibly thorough. It's rare to find tradesmen who take this much pride in their work.</p>
-                        <div class="flex items-center justify-center gap-2">
-                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
-                            <p class="text-white font-medium tracking-wider text-sm">Emma R., Altrincham</p>
-                            <div class="w-8 h-px bg-[#C8AA6E]/30"></div>
+                        <!-- Review 3 -->
+                        <div class="p-8 rounded-xl border border-[#C8AA6E]/20 bg-[#11223a] relative hover:border-[#C8AA6E] transition-all">
+                            <div class="text-[#C8AA6E] text-6xl absolute -top-4 left-6">"</div>
+                            <p class="text-[#ADA694] italic mb-6 relative z-10 leading-relaxed">Professional, polite, and incredibly thorough. It's rare to find tradesmen who take this much pride in their work.</p>
+                            <div class="flex items-center justify-center gap-2">
+                                <div class="w-8 h-px bg-[#C8AA6E]/50"></div>
+                                <p class="text-white font-bold text-sm">Emma R., Altrincham</p>
+                                <div class="w-8 h-px bg-[#C8AA6E]/50"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -255,51 +175,21 @@
 
             <!-- Contact Section -->
             <section id="contact" class="scroll-animate w-full px-4 pb-24 flex flex-col items-center text-center">
-                <div class="w-full max-w-4xl p-8 md:p-12 rounded-3xl bg-gradient-to-b from-[#0A1829] to-[#050e16] border border-[#C8AA6E]/20 relative overflow-hidden">
-                    <!-- Glow effect -->
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#C8AA6E]/5 rounded-full blur-[80px] pointer-events-none"></div>
+                <div class="w-full max-w-4xl p-8 md:p-12 rounded-2xl bg-[#0A1829] border border-[#C8AA6E]/20 shadow-2xl relative overflow-hidden">
                     
-                    <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-6 text-white">Ready to get started?</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-white">Start Your Transformation</h2>
                     <p class="text-lg text-[#ADA694] mb-8 max-w-2xl mx-auto">
-                        Select a service below to view packages, see our work, and arrange a quote tailored to your needs.
+                        Choose a service below to view our packages, see examples of our work, and arrange your quote.
                     </p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto text-left">
-                        <a href="sterling-lawncare-gallery.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA6E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
-                            <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">Sterling Lawncare</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        <a href="sterling-lawncare-gallery.html" class="group flex items-center justify-between p-4 rounded-lg border border-[#C8AA6E]/30 bg-[#0A1829] hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
+                            <span class="text-lg text-[#ADA694] group-hover:text-[#0A1829] font-bold">Sterling Lawncare</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#0A1829] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </a>
-                        <a href="omega-window-cleaning.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA6E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
-                            <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">Omega Window Cleaning</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                        </a>
-                        <a href="aqua-blast.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA6E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                                <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">Aqua Blast</span>
-                                <span class="text-[10px] font-bold uppercase tracking-wider border border-[#C8AA6E] text-[#C8AA6E] group-hover:border-[#040C18] group-hover:text-[#040C18] px-2 py-0.5 rounded w-fit">Coming Soon</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                        </a>
-                        <a href="gutter-suckers.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA6E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                                <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">Gutter Suckers</span>
-                                <span class="text-[10px] font-bold uppercase tracking-wider border border-[#C8AA6E] text-[#C8AA6E] group-hover:border-[#040C18] group-hover:text-[#040C18] px-2 py-0.5 rounded w-fit">Coming Soon</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                        </a>
-                        <a href="the-fence-painter.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA69E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                                <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">The Fence Painter</span>
-                                <span class="text-[10px] font-bold uppercase tracking-wider border border-[#C8AA6E] text-[#C8AA6E] group-hover:border-[#040C18] group-hover:text-[#040C18] px-2 py-0.5 rounded w-fit">Coming Soon</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                        </a>
-                        <a href="clean-trim.html" class="group flex items-center justify-between p-4 rounded-xl border border-[#C8AA6E]/30 bg-[#040C18]/50 hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                                <span class="text-lg text-[#ADA694] group-hover:text-[#040C18] font-medium">Clean Trim</span>
-                                <span class="text-[10px] font-bold uppercase tracking-wider border border-[#C8AA6E] text-[#C8AA6E] group-hover:border-[#040C18] group-hover:text-[#040C18] px-2 py-0.5 rounded w-fit">Coming Soon</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#040C18] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        <a href="omega-window-cleaning.html" class="group flex items-center justify-between p-4 rounded-lg border border-[#C8AA6E]/30 bg-[#0A1829] hover:bg-[#C8AA6E] hover:border-[#C8AA6E] transition-all duration-300">
+                            <span class="text-lg text-[#ADA694] group-hover:text-[#0A1829] font-bold">Omega Window Cleaning</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C8AA6E] group-hover:text-[#0A1829] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </a>
                     </div>
                 </div>
@@ -310,11 +200,8 @@
 
     <!-- Footer -->
     <footer class="text-center py-8 px-4 border-t border-[#ADA694]/10 mt-auto">
-        <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2025 Premium Property Care Services. All Rights Reserved.</p>
+        <p class="text-sm text-[#ADA694]/60 tracking-widest">&copy; 2025 PCS. All Rights Reserved.</p>
     </footer>
-
-    <!-- Bee Logo -->
-    <img src="assets/images/bee-logo.png" alt="Golden bee logo" class="bee-logo-img">
 
     <!-- JavaScript for Mobile Menu and Section Toggling -->
     <script src="script.js"></script>

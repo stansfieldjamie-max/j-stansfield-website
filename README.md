@@ -1,6 +1,6 @@
-# Premium Property Care Services
+# PCS
 
-Welcome to the official website repository for Premium Property Care Services. This website showcases our range of high-quality property maintenance services with a focus on "World Class, No Nonsense" user experience.
+Welcome to the official website repository for PCS. This website showcases our range of high-quality property maintenance services with a focus on "World Class, No Nonsense" user experience.
 
 ## Services Included
 
