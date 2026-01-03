@@ -1,15 +1,11 @@
 # PCS
 
-Welcome to the official website repository for PCS. This website showcases our range of high-quality property maintenance services with a focus on "World Class, No Nonsense" user experience.
+Welcome to the official website repository for PCS. This website showcases our range of high-quality property maintenance services with a focus on "No Nonsense" user experience.
 
 ## Services Included
 
 *   **Sterling Lawncare:** Premium lawn maintenance and restoration.
 *   **Omega Window Cleaning:** Residential window cleaning (Exterior, Interior, and Signature Service).
-*   **Aqua Blast:** High-pressure exterior cleaning for driveways and patios.
-*   **Gutter Suckers:** Safe, ground-based gutter clearance.
-*   **The Fence Painter:** Fence painting and protection.
-*   **Clean Trim:** Hedge and shrub maintenance.
 
 ## Technologies Used
 
