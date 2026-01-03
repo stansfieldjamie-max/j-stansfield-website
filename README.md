@@ -4,7 +4,7 @@ Welcome to the official website repository for PCS. This website showcases our r
 
 ## Services Included
 
-*   **Sterling Lawncare:** Premium lawn maintenance and restoration.
+*   **Lawn Surgeon:** Premium lawn maintenance and restoration.
 *   **Omega Window Cleaning:** Residential window cleaning (Exterior, Interior, and Signature Service).
 
 ## Technologies Used
