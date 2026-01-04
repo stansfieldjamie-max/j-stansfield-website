@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Lawn Surgeon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased bg-[#0A1829] text-white min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-[#C8AA6E]/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-[#5C9966]/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-2xl w-full text-center relative z-10">
+        <!-- Success Icon -->
+        <div class="mb-8 flex justify-center">
+            <div class="rounded-full bg-[#5C9966]/10 p-6 border border-[#5C9966]/30 shadow-[0_0_30px_rgba(92,153,102,0.2)]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#5C9966]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-light mb-6 text-white tracking-wide">Quote Received</h1>
+        <p class="text-xl text-[#ADA694] mb-10 leading-relaxed max-w-lg mx-auto">
+            Thank you for using the Lawn Surgeon Quote Wizard. We have received your project details and estimated price.
+        </p>
+        
+        <div class="bg-[#11223a] border border-[#C8AA6E]/20 rounded-xl p-8 mb-10 text-left shadow-xl">
+            <h3 class="text-[#C8AA6E] font-bold uppercase tracking-widest mb-6 text-sm border-b border-[#C8AA6E]/10 pb-4">What Happens Next?</h3>
+            <ol class="space-y-4 text-[#ADA694]">
+                <li class="flex items-start gap-3"><span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-[#C8AA6E]/10 text-[#C8AA6E] text-xs font-bold">1</span> <span>We will review your lawn details and satellite imagery.</span></li>
+                <li class="flex items-start gap-3"><span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-[#C8AA6E]/10 text-[#C8AA6E] text-xs font-bold">2</span> <span>You will receive a formal confirmation email within 24 hours.</span></li>
+                <li class="flex items-start gap-3"><span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-[#C8AA6E]/10 text-[#C8AA6E] text-xs font-bold">3</span> <span>We will propose a start date for your first visit.</span></li>
+            </ol>
+        </div>
+
+        <a href="index.html" class="inline-block bg-[#C8AA6E] text-[#0A1829] font-bold uppercase tracking-widest px-10 py-4 rounded hover:bg-white transition-colors shadow-lg hover:shadow-xl">
+            Return to Homepage
+        </a>
+    </div>
+</body>
+</html>

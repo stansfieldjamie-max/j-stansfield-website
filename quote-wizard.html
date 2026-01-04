@@ -164,7 +164,13 @@
                             <label class="block text-xs uppercase tracking-widest text-[#C8AA6E] mb-2">Email Address</label>
                             <input type="email" placeholder="Enter your email to book this price" class="w-full bg-[#0A1829] border border-[#ADA694]/30 rounded p-3 text-white focus:border-[#C8AA6E] outline-none">
                         </div>
-                        <button type="button" class="w-full bg-[#C8AA6E] text-[#0A1829] font-bold uppercase tracking-widest py-4 rounded hover:bg-white transition-colors">
+                        <div class="flex items-start gap-3 py-2">
+                            <input type="checkbox" id="terms-checkbox" class="mt-1 bg-[#0A1829] border border-[#ADA694]/30 rounded text-[#C8AA6E] focus:ring-[#C8AA6E] cursor-pointer accent-[#C8AA6E]" required>
+                            <label for="terms-checkbox" class="text-xs text-[#ADA694] cursor-pointer select-none">
+                                I agree to the <button type="button" onclick="openTermsModal()" class="text-[#C8AA6E] underline hover:text-white">Terms of Service</button>, specifically regarding pet waste and property access.
+                            </label>
+                        </div>
+                        <button type="button" onclick="submitBooking()" class="w-full bg-[#C8AA6E] text-[#0A1829] font-bold uppercase tracking-widest py-4 rounded hover:bg-white transition-colors">
                             Book Now
                         </button>
                     </form>
@@ -174,6 +180,36 @@
 
         </div>
     </main>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-[#040C18]/90 backdrop-blur-sm p-4">
+        <div class="bg-[#0A1829] border border-[#C8AA6E]/20 rounded-xl max-w-2xl w-full max-h-[80vh] flex flex-col shadow-2xl">
+            <div class="p-6 border-b border-[#C8AA6E]/10 flex justify-between items-center">
+                <h3 class="text-xl font-medium text-[#C8AA6E] tracking-widest uppercase">Terms of Service</h3>
+                <button onclick="closeTermsModal()" class="text-[#ADA694] hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto text-[#ADA694] text-sm leading-relaxed space-y-4">
+                <p><strong class="text-white">1. Pet Waste Policy (Important):</strong> For the health and safety of our staff, all pet waste must be cleared from the lawn prior to our arrival. We reserve the right to refuse service if the area is heavily soiled. In such cases, the full visit fee will still be charged to cover our time and travel.</p>
+                
+                <p><strong class="text-white">2. Access & Gates:</strong> Please ensure we have clear access to the garden on your scheduled day. If gates are locked and we cannot enter, a call-out fee may apply.</p>
+                
+                <p><strong class="text-white">3. Obstacles & Furniture:</strong> Please ensure the lawn is clear of toys, furniture, and debris. While we exercise great care, we cannot be held responsible for damage to items left hidden in long grass.</p>
+                
+                <p><strong class="text-white">4. Weather Conditions:</strong> We operate in most weather conditions. However, in cases of extreme rain, snow, or frozen ground, we may need to reschedule to protect both your lawn and our equipment.</p>
+                
+                <p><strong class="text-white">5. Payment:</strong> Payment is due upon completion of the work. For subscription clients, payments are handled via monthly Direct Debit.</p>
+                
+                <p><strong class="text-white">6. Cancellations:</strong> We require 24 hours' notice for cancellations to avoid a late cancellation fee.</p>
+            </div>
+            <div class="p-6 border-t border-[#C8AA6E]/10 text-center bg-[#0A1829]">
+                <button onclick="acceptTerms()" class="bg-[#C8AA6E] text-[#0A1829] font-bold uppercase tracking-widest px-8 py-3 rounded hover:bg-white transition-colors w-full md:w-auto">
+                    I Understand & Agree
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // State
@@ -205,7 +241,7 @@
 
         // Projects that DO NOT include edging
         const noEdgingProjects = [
-            'Project Three: The Rough Cut',
+            'Project Three: Vacant Property Maintenance',
             'Project Seven: Extreme Overgrowth Clearance'
         ];
 
@@ -299,6 +335,38 @@
             const locText = selections.location === 'both' ? 'Front & Back' : `${selections.location.charAt(0).toUpperCase() + selections.location.slice(1)} Garden`;
             const sizeText = selections.size.charAt(0).toUpperCase() + selections.size.slice(1);
             document.getElementById('price-breakdown').textContent = `${selections.project} • ${locText} • ${sizeText}`;
+        }
+
+        // Terms Modal Logic
+        function openTermsModal() {
+            document.getElementById('terms-modal').classList.remove('hidden');
+        }
+        function closeTermsModal() {
+            document.getElementById('terms-modal').classList.add('hidden');
+        }
+        function acceptTerms() {
+            document.getElementById('terms-checkbox').checked = true;
+            closeTermsModal();
+        }
+
+        // Submit Booking Logic
+        function submitBooking() {
+            const emailInput = document.querySelector('input[type="email"]');
+            const termsCheckbox = document.getElementById('terms-checkbox');
+            
+            if (!emailInput.value || !emailInput.value.includes('@')) {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+                return;
+            }
+            
+            if (!termsCheckbox.checked) {
+                alert('Please agree to the Terms of Service.');
+                return;
+            }
+            
+            // Redirect to Thank You page
+            window.location.href = 'thank-you.html';
         }
     </script>
 </body>
