@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Quote - Lawn Surgeon</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .step-card {
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: #C8AA6E;
+        }
+        .step-card.selected {
+            border-color: #5C9966;
+            background-color: rgba(92, 153, 102, 0.1);
+            box-shadow: 0 0 15px rgba(92, 153, 102, 0.2);
+        }
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased bg-[#0A1829] text-white min-h-screen flex flex-col">
+
+    <!-- Simple Header -->
+    <header class="p-6 flex justify-between items-center border-b border-[#C8AA6E]/20 bg-[#0A1829]">
+        <div class="logo-container">
+            <a href="lawn-surgeon-gallery.html" class="flex items-center gap-2 text-[#ADA694] hover:text-[#C8AA6E] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <span class="uppercase tracking-widest text-sm font-semibold">Back to Gallery</span>
+            </a>
+        </div>
+        <div class="text-[#C8AA6E] font-bold tracking-widest uppercase">Lawn Surgeon Quote</div>
+    </header>
+
+    <!-- Main Wizard Container -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-4xl">
+            
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="h-1 w-full bg-[#11223a] rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-[#C8AA6E] transition-all duration-500 ease-out" style="width: 25%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-[#ADA694] mt-2 uppercase tracking-widest">
+                    <span>Location</span>
+                    <span>Size</span>
+                    <span>Condition</span>
+                    <span>Price</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Title -->
+            <h1 id="wizard-title" class="text-3xl md:text-4xl font-light text-center mb-2 text-white">Let's detail your project</h1>
+            <p id="wizard-subtitle" class="text-[#ADA694] text-center mb-12 text-lg">Selected Service: <span id="selected-service-name" class="text-[#C8AA6E] font-medium">Loading...</span></p>
+
+            <!-- Step 1: Location -->
+            <div id="step-1" class="wizard-step grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Option: Front Garden -->
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(1, 'front')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <!-- Placeholder Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Front Garden</h3>
+                </div>
+                <!-- Option: Back Garden -->
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(1, 'back')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Back Garden</h3>
+                </div>
+                <!-- Option: Both -->
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(1, 'both')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Front & Back</h3>
+                </div>
+            </div>
+
+            <!-- Step 2: Size -->
+            <div id="step-2" class="wizard-step hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(2, 'small')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Small</h3>
+                    <p class="text-sm text-[#ADA694] mt-2">Up to 50m² (Parking space)</p>
+                </div>
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(2, 'medium')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Medium</h3>
+                    <p class="text-sm text-[#ADA694] mt-2">Up to 150m² (Tennis court half)</p>
+                </div>
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(2, 'large')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Large</h3>
+                    <p class="text-sm text-[#ADA694] mt-2">150m² + (Full Tennis court)</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Condition/Length -->
+            <div id="step-3" class="wizard-step hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(3, 'short')">
+                    <div class="h-32 flex items-center justify-center mb-4 text-[#C8AA6E]">
+                        <!-- Placeholder for Short Grass Image -->
+                        <div class="w-full h-2 bg-[#5C9966] rounded"></div>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Short / Maintained</h3>
+                    <p class="text-sm text-[#ADA694] mt-2">Regularly cut, ankle height or less.</p>
+                </div>
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(3, 'medium')">
+                    <div class="h-32 flex items-end justify-center mb-4 text-[#C8AA6E] gap-1">
+                        <div class="w-2 h-8 bg-[#5C9966] rounded-t"></div>
+                        <div class="w-2 h-10 bg-[#5C9966] rounded-t"></div>
+                        <div class="w-2 h-6 bg-[#5C9966] rounded-t"></div>
+                        <div class="w-2 h-9 bg-[#5C9966] rounded-t"></div>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Medium High</h3>
+                    <p class="text-sm text-[#ADA694] mt-2">Overdue a cut, shin height.</p>
+                </div>
+                <div class="step-card border border-[#C8AA6E]/30 bg-[#11223a] rounded-xl p-6 cursor-pointer text-center" onclick="selectOption(3, 'overgrown')">
+                    <div class="h-32 flex items-end justify-center mb-4 text-[#C8AA6E] gap-1">
+                        <div class="w-2 h-16 bg-[#5C9966] rounded-t"></div>
+                        <div class="w-2 h-24 bg-[#5C9966] rounded-t"></div>
+                        <div class="w-2 h-12 bg-[#5C9966] rounded-t"></div>
+                        <div class="w-2 h-20 bg-[#5C9966] rounded-t"></div>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-wide">Overgrown</h3>
+                    <p class="text-sm text-[#ADA694] mt-2">Knee height or wild.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Quote Result -->
+            <div id="step-4" class="wizard-step hidden text-center">
+                <div class="elegant-box max-w-2xl mx-auto border border-[#C8AA6E] rounded-xl p-8 bg-[#11223a] relative">
+                    <h2 class="text-2xl text-[#ADA694] uppercase tracking-widest mb-2">Estimated Quote</h2>
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4" id="final-price">£0.00</div>
+                    <p class="text-[#ADA694] mb-8" id="price-breakdown">Based on your selection.</p>
+                    
+                    <div id="edging-note" class="bg-[#5C9966]/10 border border-[#5C9966]/30 rounded-lg p-4 mb-8 hidden">
+                        <p class="text-[#5C9966] text-sm font-semibold uppercase tracking-wider">
+                            <span class="mr-2">✓</span> Includes Precision Lawn Edging
+                        </p>
+                    </div>
+
+                    <form id="booking-form" class="text-left space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-[#C8AA6E] mb-2">Email Address</label>
+                            <input type="email" placeholder="Enter your email to book this price" class="w-full bg-[#0A1829] border border-[#ADA694]/30 rounded p-3 text-white focus:border-[#C8AA6E] outline-none">
+                        </div>
+                        <button type="button" class="w-full bg-[#C8AA6E] text-[#0A1829] font-bold uppercase tracking-widest py-4 rounded hover:bg-white transition-colors">
+                            Book Now
+                        </button>
+                    </form>
+                </div>
+                <button onclick="location.reload()" class="mt-8 text-[#ADA694] hover:text-white underline text-sm">Start Over</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // State
+        let currentStep = 1;
+        const selections = {
+            project: '',
+            location: '',
+            size: '',
+            condition: ''
+        };
+
+        // Pricing Configuration
+        const basePrices = {
+            'small': 20,
+            'medium': 35,
+            'large': 50
+        };
+
+        const multipliers = {
+            'front': 1,
+            'back': 1,
+            'both': 1.8, // Discount for doing both
+            'short': 1,
+            'medium': 1.2,
+            'overgrown': 1.5
+        };
+
+        const edgingCost = 5; // Flat fee included in most projects
+
+        // Projects that DO NOT include edging
+        const noEdgingProjects = [
+            'Project Three: The Rough Cut',
+            'Project Seven: Extreme Overgrowth Clearance'
+        ];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get project from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectParam = urlParams.get('project');
+            
+            if (projectParam) {
+                selections.project = decodeURIComponent(projectParam);
+                document.getElementById('selected-service-name').textContent = selections.project;
+            } else {
+                document.getElementById('selected-service-name').textContent = 'General Enquiry';
+            }
+        });
+
+        function selectOption(step, value) {
+            // Save selection
+            if (step === 1) selections.location = value;
+            if (step === 2) selections.size = value;
+            if (step === 3) selections.condition = value;
+
+            // Visual feedback
+            const currentStepEl = document.getElementById(`step-${step}`);
+            const cards = currentStepEl.querySelectorAll('.step-card');
+            cards.forEach(card => card.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+
+            // Move to next step after short delay
+            setTimeout(() => {
+                if (step < 3) {
+                    showStep(step + 1);
+                } else {
+                    calculatePrice();
+                    showStep(4);
+                }
+            }, 300);
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
+            // Show requested step
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            
+            // Update Progress Bar
+            const progress = step * 25;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            // Update Title
+            const titles = {
+                1: "Where is the lawn located?",
+                2: "Roughly how big is the area?",
+                3: "What is the current condition?",
+                4: "Your Estimated Quote"
+            };
+            document.getElementById('wizard-title').textContent = titles[step];
+        }
+
+        function calculatePrice() {
+            let price = basePrices[selections.size] || 0;
+            
+            // Apply location multiplier
+            price = price * multipliers[selections.location];
+
+            // Apply condition multiplier
+            price = price * multipliers[selections.condition];
+
+            // Check if edging is included
+            const includesEdging = !noEdgingProjects.includes(selections.project);
+            
+            if (includesEdging) {
+                // Add edging cost (scaled slightly by location)
+                const edgingMultiplier = selections.location === 'both' ? 1.5 : 1;
+                price += (edgingCost * edgingMultiplier);
+                
+                // Show the "Includes Edging" badge
+                document.getElementById('edging-note').classList.remove('hidden');
+            } else {
+                document.getElementById('edging-note').classList.add('hidden');
+            }
+
+            // Round to nearest 5 for neatness
+            price = Math.ceil(price / 5) * 5;
+
+            // Display
+            document.getElementById('final-price').textContent = `£${price}`;
+            
+            // Update breakdown text
+            const locText = selections.location === 'both' ? 'Front & Back' : `${selections.location.charAt(0).toUpperCase() + selections.location.slice(1)} Garden`;
+            const sizeText = selections.size.charAt(0).toUpperCase() + selections.size.slice(1);
+            document.getElementById('price-breakdown').textContent = `${selections.project} • ${locText} • ${sizeText}`;
+        }
+    </script>
+</body>
+</html>
