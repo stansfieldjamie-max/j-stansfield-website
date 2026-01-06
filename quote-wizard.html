@@ -39,7 +39,7 @@
                 <span class="uppercase tracking-widest text-sm font-semibold">Back to Gallery</span>
             </a>
         </div>
-        <div class="text-[#C8AA6E] font-bold tracking-widest uppercase">Lawn Surgeon Quote</div>
+        <div class="text-[#C8AA6E] font-bold tracking-widest uppercase">Residential Quote</div>
     </header>
 
     <!-- Main Wizard Container -->
@@ -61,6 +61,7 @@
 
             <!-- Dynamic Title -->
             <h1 id="wizard-title" class="text-3xl md:text-4xl font-light text-center mb-2 text-white">Let's detail your project</h1>
+            <p class="text-center text-[#ADA694]/60 text-xs uppercase tracking-widest mb-2">For Residential Properties Only</p>
             <p id="wizard-subtitle" class="text-[#ADA694] text-center mb-12 text-lg">Selected Service: <span id="selected-service-name" class="text-[#C8AA6E] font-medium">Loading...</span></p>
 
             <!-- Step 1: Location -->
@@ -153,6 +154,11 @@
                     <div class="text-5xl md:text-6xl font-bold text-white mb-4" id="final-price">£0.00</div>
                     <p class="text-[#ADA694] mb-8" id="price-breakdown">Based on your selection.</p>
                     
+                    <!-- Deposit Notice -->
+                    <div class="mb-8 inline-block bg-[#C8AA6E]/10 border border-[#C8AA6E]/30 rounded px-4 py-2 text-[#C8AA6E] text-xs font-bold uppercase tracking-widest">
+                        Requires £15 Non-Refundable Deposit to Book
+                    </div>
+                    
                     <div id="edging-note" class="bg-[#5C9966]/10 border border-[#5C9966]/30 rounded-lg p-4 mb-8 hidden">
                         <p class="text-[#5C9966] text-sm font-semibold uppercase tracking-wider">
                             <span class="mr-2">✓</span> Includes Precision Lawn Edging
@@ -160,9 +166,15 @@
                     </div>
 
                     <form id="booking-form" class="text-left space-y-4">
+                        <!-- Honeypot Field (Hidden) - Traps bots who fill out every field -->
+                        <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                            <input type="text" id="website-honeypot" name="website-honeypot" tabindex="-1" autocomplete="off">
+                        </div>
+
                         <div>
                             <label class="block text-xs uppercase tracking-widest text-[#C8AA6E] mb-2">Email Address</label>
-                            <input type="email" placeholder="Enter your email to book this price" class="w-full bg-[#0A1829] border border-[#ADA694]/30 rounded p-3 text-white focus:border-[#C8AA6E] outline-none">
+                            <input type="email" id="email-input" placeholder="Enter your email to book this price" class="w-full bg-[#0A1829] border border-[#ADA694]/30 rounded p-3 text-white focus:border-[#C8AA6E] outline-none transition-colors">
+                            <p id="email-error" class="text-red-500 text-xs mt-2 hidden">Please enter a valid email address (e.g. name@example.com).</p>
                         </div>
                         <div class="flex items-start gap-3 py-2">
                             <input type="checkbox" id="terms-checkbox" class="mt-1 bg-[#0A1829] border border-[#ADA694]/30 rounded text-[#C8AA6E] focus:ring-[#C8AA6E] cursor-pointer accent-[#C8AA6E]" required>
@@ -202,6 +214,8 @@
                 <p><strong class="text-white">5. Payment:</strong> Payment is due upon completion of the work. For subscription clients, payments are handled via monthly Direct Debit.</p>
                 
                 <p><strong class="text-white">6. Cancellations:</strong> We require 24 hours' notice for cancellations to avoid a late cancellation fee.</p>
+                
+                <p><strong class="text-white">7. Booking Deposit:</strong> A £15 non-refundable deposit is required to secure your booking slot. This amount will be deducted from your first invoice. If you cancel, this deposit is forfeited to cover administrative costs.</p>
             </div>
             <div class="p-6 border-t border-[#C8AA6E]/10 text-center bg-[#0A1829]">
                 <button onclick="acceptTerms()" class="bg-[#C8AA6E] text-[#0A1829] font-bold uppercase tracking-widest px-8 py-3 rounded hover:bg-white transition-colors w-full md:w-auto">
@@ -351,11 +365,36 @@
 
         // Submit Booking Logic
         function submitBooking() {
-            const emailInput = document.querySelector('input[type="email"]');
+            const emailInput = document.getElementById('email-input');
+            const emailError = document.getElementById('email-error');
             const termsCheckbox = document.getElementById('terms-checkbox');
+            const honeypot = document.getElementById('website-honeypot');
             
-            if (!emailInput.value || !emailInput.value.includes('@')) {
-                alert('Please enter a valid email address.');
+            // 1. Honeypot Check (Anti-Spam)
+            if (honeypot && honeypot.value) {
+                console.log('Bot detected.');
+                return; // Silently fail
+            }
+
+            // 2. Rate Limiting (Prevent spamming - 60 second cooldown)
+            const lastSubmit = localStorage.getItem('ls_last_quote_time');
+            if (lastSubmit && (Date.now() - parseInt(lastSubmit) < 60000)) {
+                alert('Please wait a minute before submitting another quote.');
+                return;
+            }
+
+            // 3. Strict Email Validation Regex
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+            // Reset Error State
+            emailInput.classList.remove('border-red-500', 'focus:border-red-500');
+            emailInput.classList.add('border-[#ADA694]/30', 'focus:border-[#C8AA6E]');
+            emailError.classList.add('hidden');
+
+            if (!emailInput.value || !emailRegex.test(emailInput.value)) {
+                emailInput.classList.remove('border-[#ADA694]/30', 'focus:border-[#C8AA6E]');
+                emailInput.classList.add('border-red-500', 'focus:border-red-500');
+                emailError.classList.remove('hidden');
                 emailInput.focus();
                 return;
             }
@@ -365,9 +404,16 @@
                 return;
             }
             
+            // Save timestamp for rate limiting
+            localStorage.setItem('ls_last_quote_time', Date.now().toString());
+            
             // Redirect to Thank You page
             window.location.href = 'thank-you.html';
         }
     </script>
+
+    <footer class="p-6 text-center text-xs text-[#ADA694]/40">
+        <p>&copy; 2025 Lawn Surgeon. <a href="about-us.html" class="hover:text-[#C8AA6E] transition-colors">About Us</a> | <a href="privacy-policy.html" class="hover:text-[#C8AA6E] transition-colors">Privacy Policy</a> | <a href="terms-of-service.html" class="hover:text-[#C8AA6E] transition-colors">Terms of Service</a></p>
+    </footer>
 </body>
 </html>
